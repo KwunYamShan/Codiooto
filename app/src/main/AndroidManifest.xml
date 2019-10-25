@@ -21,15 +21,19 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="net.moyokoo.app.MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="net.moyokoo.app.DisplayActivity"
+        <activity android:name=".ui.DisplayActivity"
             android:configChanges="orientation"/>
+        <activity
+            android:name=".ui.ImageActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/Transparent"/>
     </application>
 
 </manifest>

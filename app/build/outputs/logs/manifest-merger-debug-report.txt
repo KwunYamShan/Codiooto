@@ -1,0 +1,222 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:2:1-39:12
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\b0c580c4adb6268acf0c70e3c621232c\AndroidManifest.xml:17:1-22:12
+MERGED from [:diooto] C:\Users\KwunYamShan\Desktop\HBH\Codiooto\diooto\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\131953037174d7456d67ce64eb2321bf\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\834eca7905aee2889751c58ccdb83b45\AndroidManifest.xml:17:1-22:12
+MERGED from [org.salient.artvideoplayer:artplayer-java:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-java-0.6.0.aar\12e7b8699816525655d87c5b47b67282\AndroidManifest.xml:2:1-13:12
+MERGED from [org.salient.artvideoplayer:artplayer-ui:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-ui-0.6.0.aar\766a28040ee97eeb74b1380817bc367e\AndroidManifest.xml:2:1-11:12
+MERGED from [org.salient.artvideoplayer:artplayer-ijk:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-ijk-0.6.0.aar\9ed9879f5068fc0db39fdaa7f2abbd4d\AndroidManifest.xml:2:1-11:12
+MERGED from [org.salient.artvideoplayer:artplayer-armv7a:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-armv7a-0.6.0.aar\4b69ce93797047370910d613e4c5a69a\AndroidManifest.xml:2:1-17:12
+MERGED from [me.panpf:sketch-gif:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-gif-2.6.2-b1.aar\8c8d1eb70bbac536873098dfab580578\AndroidManifest.xml:2:1-13:12
+MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-2.6.2-b1.aar\112dc4cd5ebe013a826cce7e3ec5e57a\AndroidManifest.xml:2:1-16:12
+MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\BaseRecyclerViewAdapterHelper-2.9.44.aar\6fc7e68df018e83c5317c1b398123b96\AndroidManifest.xml:2:1-11:12
+MERGED from [com.yanzhenjie:sofia:1.0.5] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sofia-1.0.5.aar\59414573912fd87b45ae56c5e1c36612\AndroidManifest.xml:17:1-24:12
+MERGED from [com.gyf.immersionbar:immersionbar:2.3.3] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\immersionbar-2.3.3.aar\3fe58db8ef455b4f6a8c7575ebbcb16a\AndroidManifest.xml:2:1-10:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\232875facaf949a58f938ff7c893c7da\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\7a9443c5b21c55bac5533770e9db4c03\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\dee6ac03acbe8b405c181851658d9142\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\9abe83f29743a2dc87886664a639f067\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\557582896ac5718493e6c651d9d3471e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\57f81523556aff1ae3ab8bec9ef79c20\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b9976720966ba132489d6ce80cb8f36a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\8ad09f24d84421409c70568dc3b6423c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\b4b5102e2cf9cb605d3e0c8fb7ea10c7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5fc49167be57ea7023a0363f6ddb7f30\AndroidManifest.xml:17:1-22:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\ijkplayer-java-0.8.8.aar\229b973f1acb197dd258bca623385367\AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv7a-0.8.8.aar\759e61df0a288813d68c25df5cfaa632\AndroidManifest.xml:2:1-9:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\816efa134f97e021d0ad90975b5369ec\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\91b21fccfccc1782dc7349093566631c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e209a58e2fdfb5f1cc6e3d68770e1ab6\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\85c75f7a48bc211e27c43db2522d90c9\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:2:1-39:12
+	package
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:3:11-36
+		INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:2:1-39:12
+		INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:2:1-39:12
+		INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.RECEIVE_USER_PRESENT
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:5:22-76
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:6:5-67
+MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-2.6.2-b1.aar\112dc4cd5ebe013a826cce7e3ec5e57a\AndroidManifest.xml:11:5-67
+MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-2.6.2-b1.aar\112dc4cd5ebe013a826cce7e3ec5e57a\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.WAKE_LOCK
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:7:5-68
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:7:22-65
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:8:5-75
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:8:22-72
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:9:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:10:22-77
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:11:5-73
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:11:22-70
+uses-permission#android.permission.VIBRATE
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:12:5-66
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:12:22-63
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:13:5-84
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:13:22-81
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:14:5-79
+MERGED from [org.salient.artvideoplayer:artplayer-java:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-java-0.6.0.aar\12e7b8699816525655d87c5b47b67282\AndroidManifest.xml:11:5-79
+MERGED from [org.salient.artvideoplayer:artplayer-java:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-java-0.6.0.aar\12e7b8699816525655d87c5b47b67282\AndroidManifest.xml:11:5-79
+MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-2.6.2-b1.aar\112dc4cd5ebe013a826cce7e3ec5e57a\AndroidManifest.xml:12:5-79
+MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-2.6.2-b1.aar\112dc4cd5ebe013a826cce7e3ec5e57a\AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:14:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:15:5-76
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:15:22-73
+application
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:17:5-37:19
+MERGED from [org.salient.artvideoplayer:artplayer-armv7a:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-armv7a-0.6.0.aar\4b69ce93797047370910d613e4c5a69a\AndroidManifest.xml:11:5-15:19
+MERGED from [org.salient.artvideoplayer:artplayer-armv7a:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-armv7a-0.6.0.aar\4b69ce93797047370910d613e4c5a69a\AndroidManifest.xml:11:5-15:19
+MERGED from [me.panpf:sketch-gif:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-gif-2.6.2-b1.aar\8c8d1eb70bbac536873098dfab580578\AndroidManifest.xml:11:5-20
+MERGED from [me.panpf:sketch-gif:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-gif-2.6.2-b1.aar\8c8d1eb70bbac536873098dfab580578\AndroidManifest.xml:11:5-20
+MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-2.6.2-b1.aar\112dc4cd5ebe013a826cce7e3ec5e57a\AndroidManifest.xml:14:5-20
+MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-2.6.2-b1.aar\112dc4cd5ebe013a826cce7e3ec5e57a\AndroidManifest.xml:14:5-20
+	android:supportsRtl
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:22:9-35
+	android:label
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:21:9-41
+	android:icon
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:20:9-43
+	android:allowBackup
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:18:9-35
+	android:theme
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:23:9-40
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:19:9-43
+activity#net.moyokoo.app.ui.MainActivity
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:24:9-30:20
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:24:19-50
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:25:13-29:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:26:17-68
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:26:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:28:17-76
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:28:27-74
+activity#net.moyokoo.app.ui.DisplayActivity
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:31:9-32:50
+	android:configChanges
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:32:13-48
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:31:19-53
+activity#net.moyokoo.app.ui.ImageActivity
+ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:33:9-36:49
+	android:configChanges
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:35:13-74
+	android:theme
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:36:13-47
+	android:name
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:34:13-45
+uses-sdk
+INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\b0c580c4adb6268acf0c70e3c621232c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\b0c580c4adb6268acf0c70e3c621232c\AndroidManifest.xml:20:5-44
+MERGED from [:diooto] C:\Users\KwunYamShan\Desktop\HBH\Codiooto\diooto\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:diooto] C:\Users\KwunYamShan\Desktop\HBH\Codiooto\diooto\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\131953037174d7456d67ce64eb2321bf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\131953037174d7456d67ce64eb2321bf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\834eca7905aee2889751c58ccdb83b45\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\834eca7905aee2889751c58ccdb83b45\AndroidManifest.xml:20:5-44
+MERGED from [org.salient.artvideoplayer:artplayer-java:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-java-0.6.0.aar\12e7b8699816525655d87c5b47b67282\AndroidManifest.xml:7:5-9:41
+MERGED from [org.salient.artvideoplayer:artplayer-java:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-java-0.6.0.aar\12e7b8699816525655d87c5b47b67282\AndroidManifest.xml:7:5-9:41
+MERGED from [org.salient.artvideoplayer:artplayer-ui:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-ui-0.6.0.aar\766a28040ee97eeb74b1380817bc367e\AndroidManifest.xml:7:5-9:41
+MERGED from [org.salient.artvideoplayer:artplayer-ui:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-ui-0.6.0.aar\766a28040ee97eeb74b1380817bc367e\AndroidManifest.xml:7:5-9:41
+MERGED from [org.salient.artvideoplayer:artplayer-ijk:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-ijk-0.6.0.aar\9ed9879f5068fc0db39fdaa7f2abbd4d\AndroidManifest.xml:7:5-9:41
+MERGED from [org.salient.artvideoplayer:artplayer-ijk:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-ijk-0.6.0.aar\9ed9879f5068fc0db39fdaa7f2abbd4d\AndroidManifest.xml:7:5-9:41
+MERGED from [org.salient.artvideoplayer:artplayer-armv7a:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-armv7a-0.6.0.aar\4b69ce93797047370910d613e4c5a69a\AndroidManifest.xml:7:5-9:41
+MERGED from [org.salient.artvideoplayer:artplayer-armv7a:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\artplayer-armv7a-0.6.0.aar\4b69ce93797047370910d613e4c5a69a\AndroidManifest.xml:7:5-9:41
+MERGED from [me.panpf:sketch-gif:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-gif-2.6.2-b1.aar\8c8d1eb70bbac536873098dfab580578\AndroidManifest.xml:7:5-9:41
+MERGED from [me.panpf:sketch-gif:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-gif-2.6.2-b1.aar\8c8d1eb70bbac536873098dfab580578\AndroidManifest.xml:7:5-9:41
+MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-2.6.2-b1.aar\112dc4cd5ebe013a826cce7e3ec5e57a\AndroidManifest.xml:7:5-9:41
+MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sketch-2.6.2-b1.aar\112dc4cd5ebe013a826cce7e3ec5e57a\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\BaseRecyclerViewAdapterHelper-2.9.44.aar\6fc7e68df018e83c5317c1b398123b96\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\BaseRecyclerViewAdapterHelper-2.9.44.aar\6fc7e68df018e83c5317c1b398123b96\AndroidManifest.xml:7:5-9:41
+MERGED from [com.yanzhenjie:sofia:1.0.5] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sofia-1.0.5.aar\59414573912fd87b45ae56c5e1c36612\AndroidManifest.xml:20:5-22:41
+MERGED from [com.yanzhenjie:sofia:1.0.5] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\sofia-1.0.5.aar\59414573912fd87b45ae56c5e1c36612\AndroidManifest.xml:20:5-22:41
+MERGED from [com.gyf.immersionbar:immersionbar:2.3.3] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\immersionbar-2.3.3.aar\3fe58db8ef455b4f6a8c7575ebbcb16a\AndroidManifest.xml:6:5-8:41
+MERGED from [com.gyf.immersionbar:immersionbar:2.3.3] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\immersionbar-2.3.3.aar\3fe58db8ef455b4f6a8c7575ebbcb16a\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\232875facaf949a58f938ff7c893c7da\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\232875facaf949a58f938ff7c893c7da\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\7a9443c5b21c55bac5533770e9db4c03\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\7a9443c5b21c55bac5533770e9db4c03\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\dee6ac03acbe8b405c181851658d9142\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\dee6ac03acbe8b405c181851658d9142\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\9abe83f29743a2dc87886664a639f067\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\9abe83f29743a2dc87886664a639f067\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\557582896ac5718493e6c651d9d3471e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\557582896ac5718493e6c651d9d3471e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\57f81523556aff1ae3ab8bec9ef79c20\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\57f81523556aff1ae3ab8bec9ef79c20\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b9976720966ba132489d6ce80cb8f36a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b9976720966ba132489d6ce80cb8f36a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\8ad09f24d84421409c70568dc3b6423c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\8ad09f24d84421409c70568dc3b6423c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\b4b5102e2cf9cb605d3e0c8fb7ea10c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\b4b5102e2cf9cb605d3e0c8fb7ea10c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5fc49167be57ea7023a0363f6ddb7f30\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5fc49167be57ea7023a0363f6ddb7f30\AndroidManifest.xml:20:5-44
+MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\ijkplayer-java-0.8.8.aar\229b973f1acb197dd258bca623385367\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\ijkplayer-java-0.8.8.aar\229b973f1acb197dd258bca623385367\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv7a-0.8.8.aar\759e61df0a288813d68c25df5cfaa632\AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\ijkplayer-armv7a-0.8.8.aar\759e61df0a288813d68c25df5cfaa632\AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\816efa134f97e021d0ad90975b5369ec\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\816efa134f97e021d0ad90975b5369ec\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\91b21fccfccc1782dc7349093566631c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\91b21fccfccc1782dc7349093566631c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e209a58e2fdfb5f1cc6e3d68770e1ab6\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e209a58e2fdfb5f1cc6e3d68770e1ab6\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\85c75f7a48bc211e27c43db2522d90c9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\85c75f7a48bc211e27c43db2522d90c9\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml

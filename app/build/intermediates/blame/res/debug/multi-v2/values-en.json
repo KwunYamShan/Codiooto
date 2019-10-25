@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\KwunYamShan\\Desktop\\HBH\\Codiooto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-1\\files-1.1\\BaseRecyclerViewAdapterHelper-2.9.44.aar\\6fc7e68df018e83c5317c1b398123b96\\res\\values-en\\values-en.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,111,174",
+                        "endColumns": "55,62,52",
+                        "endOffsets": "106,169,222"
+                    }
+                }
+            ]
+        }
+    ]
+}

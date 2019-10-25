@@ -1,8 +1,10 @@
 package net.moyokoo.diooto;
 
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
@@ -15,14 +17,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import net.moyokoo.diooto.config.DiootoConfig;
 import net.moyokoo.diooto.config.ContentViewOriginModel;
-import net.moyokoo.diooto.interfaces.CircleIndexIndicator;
-import net.moyokoo.diooto.interfaces.DefaultPercentProgress;
-import net.moyokoo.diooto.interfaces.IIndicator;
-import net.moyokoo.diooto.interfaces.IProgress;
+import net.moyokoo.diooto.config.DiootoConfig;
 import net.moyokoo.diooto.tools.Fucking;
-import net.moyokoo.diooto.tools.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +29,8 @@ import me.panpf.sketch.SketchImageView;
 
 public class Diooto {
     Context mContext;
+
+    public static final String KEY_CONFIG = "config";
 
     public Diooto(Context context) {
         mContext = context;
@@ -47,11 +46,6 @@ public class Diooto {
 
     public Diooto fullscreen(boolean isFullScreen) {
         this.diootoConfig.setFullScreen(isFullScreen);
-        return this;
-    }
-
-    public Diooto indicatorVisibility(int visibility) {
-        this.diootoConfig.setIndicatorVisibility(visibility);
         return this;
     }
 
@@ -154,7 +148,7 @@ public class Diooto {
     }
 
 
-    public Diooto start() {
+    public Diooto start(Class clazz) {
         if (!diootoConfig.isImmersive()) {
             Window window = getWindow(mContext);
             if ((window.getAttributes().flags & WindowManager.LayoutParams.FLAG_FULLSCREEN)
@@ -173,13 +167,7 @@ public class Diooto {
             }
         }
 
-        if (ImageActivity.iIndicator == null) {
-            setIndicator(new CircleIndexIndicator());
-        }
-        if (ImageActivity.iProgress == null) {
-            setProgress(new DefaultPercentProgress());
-        }
-        ImageActivity.startImageActivity(scanForActivity(mContext), diootoConfig);
+        startImageActivity(scanForActivity(mContext), clazz, diootoConfig);
         return this;
     }
 
@@ -188,6 +176,15 @@ public class Diooto {
             return getAppCompActivity(context).getWindow();
         } else {
             return scanForActivity(context).getWindow();
+        }
+    }
+
+    public static void startImageActivity(Activity activity, Class clazz, DiootoConfig diootoConfig) {
+        if (activity != null && clazz != null) {
+            Intent intent = new Intent(activity, clazz);
+            intent.putExtra(Diooto.KEY_CONFIG, diootoConfig);
+            activity.startActivity(intent);
+            activity.overridePendingTransition(0, 0);
         }
     }
 
@@ -212,16 +209,6 @@ public class Diooto {
         return null;
     }
 
-    public Diooto setProgress(IProgress on) {
-        ImageActivity.iProgress = on;
-        return this;
-    }
-
-    public Diooto setIndicator(IIndicator on) {
-        ImageActivity.iIndicator = on;
-        return this;
-    }
-
     public Diooto loadPhotoBeforeShowBigImage(OnLoadPhotoBeforeShowBigImageListener on) {
         onLoadPhotoBeforeShowBigImageListener = on;
         return this;
@@ -243,9 +230,9 @@ public class Diooto {
     }
 
     public static OnLoadPhotoBeforeShowBigImageListener onLoadPhotoBeforeShowBigImageListener;
-    public static OnShowToMaxFinishListener onShowToMaxFinishListener;
-    public static OnProvideViewListener onProvideViewListener;
-    public static OnFinishListener onFinishListener;
+    public static OnShowToMaxFinishListener             onShowToMaxFinishListener;
+    public static OnProvideViewListener                 onProvideViewListener;
+    public static OnFinishListener                      onFinishListener;
 
     public interface OnLoadPhotoBeforeShowBigImageListener {
         void loadView(SketchImageView sketchImageView, int position);

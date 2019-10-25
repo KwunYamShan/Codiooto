@@ -28,4 +28,4 @@
 -keep public class * implements me.panpf.sketch.Initializer
 
 -keep class net.moyokoo.diooto.config.* {*;}
--keep class net.moyokoo.diooto.interfaces.* {*;}
+-keep class net.moyokoo.app.interfaces.* {*;}
