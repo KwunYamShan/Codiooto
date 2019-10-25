@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+    compileSdkVersion globalConfiguration.androidCompileSdkVersion
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "net.moyokoo.app"
+        minSdkVersion globalConfiguration.androidMinSdkVersion
+        targetSdkVersion globalConfiguration.androidTargetSdkVersion
+        versionCode 119
+        versionName "1.19"
+    }
+    buildTypes {
+        debug{
+            release {
+                minifyEnabled true
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation androidDependencies.appcompat_v7
+    implementation androidDependencies.design
+    api androidDependencies.cardview
+    api project(':diooto')
+    implementation 'org.salient.artvideoplayer:artplayer-java:0.6.0'
+    implementation 'org.salient.artvideoplayer:artplayer-ui:0.6.0'
+    implementation 'org.salient.artvideoplayer:artplayer-ijk:0.6.0'
+    implementation "org.salient.artvideoplayer:artplayer-armv7a:0.6.0"
+    implementation 'me.panpf:sketch-gif:2.6.2-b1'
+    implementation 'me.panpf:sketch:2.6.2-b1'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
+    implementation 'com.yanzhenjie:sofia:1.0.5'
+    implementation 'com.gyf.immersionbar:immersionbar:2.3.3'
+}
