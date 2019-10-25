@@ -2,18 +2,13 @@
 
 buildscript {
     repositories {
-        maven {
-            url  "http://dl.bintray.com/piasy/maven"
-        }
-        mavenCentral()
-        maven { url "https://jitpack.io" }
-        maven { url 'https://maven.google.com' }
+        maven{url BINTRAY_URL}
         jcenter()
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.1'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        classpath 'com.android.tools.build:gradle:3.4.1'
+        classpath 'com.novoda:bintray-release:0.9.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -21,14 +16,9 @@ buildscript {
 
 allprojects {
     repositories {
-        maven {
-            url  "http://dl.bintray.com/piasy/maven"
-        }
-        mavenCentral()
-        maven { url "https://jitpack.io" }
-        maven { url 'https://maven.google.com' }
         jcenter()
         google()
+        maven{url BINTRAY_URL}
     }
 }
 
@@ -50,6 +40,7 @@ ext {
             appcompat_v7: "com.android.support:appcompat-v7:${supportLibraryVersion}",
             design      : "com.android.support:design:${supportLibraryVersion}",
             cardview    : "com.android.support:cardview-v7:${supportLibraryVersion}",
+            codiooto    : "com.wh.diooto:Codiooto:1.0.0",
     ]
 
 

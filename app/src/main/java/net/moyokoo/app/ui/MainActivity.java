@@ -44,13 +44,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(MyViewHolder holder, final int position) {
+        public void onBindViewHolder(MyViewHolder holder, int position) {
             holder.tv.setText(texts[position]);
             holder.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View srcView) {
                     Bundle bundle = new Bundle();
-                    bundle.putInt("position", position);
+                    bundle.putInt("position", holder.getAdapterPosition());
                     DisplayActivity.newIntent(MainActivity.this, bundle);
 
                 }
