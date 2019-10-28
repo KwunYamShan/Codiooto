@@ -39,6 +39,13 @@ public class Diooto {
 
     private DiootoConfig diootoConfig;
 
+    public static DiootoConfig getDiootoExtra(Intent intent) {
+        if (intent!=null){
+            return intent.getParcelableExtra(Diooto.KEY_CONFIG);
+        }
+        return null;
+    }
+
     public Diooto urls(String imageUrl) {
         this.diootoConfig.setImageUrls(new String[]{imageUrl});
         return this;
@@ -166,9 +173,32 @@ public class Diooto {
                 }
             }
         }
-
-        startImageActivity(scanForActivity(mContext), clazz, diootoConfig);
+        startImageActivity(clazz);
         return this;
+    }
+    public Diooto setWindow() {
+        if (!diootoConfig.isImmersive()) {
+            Window window = getWindow(mContext);
+            if ((window.getAttributes().flags & WindowManager.LayoutParams.FLAG_FULLSCREEN)
+                    == WindowManager.LayoutParams.FLAG_FULLSCREEN) {
+                diootoConfig.setFullScreen(true);
+            }
+            if (!diootoConfig.isFullScreen()) {
+                window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                    window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                }
+            }
+        }
+        return this;
+    }
+
+    public DiootoConfig getConfig(){
+        return diootoConfig;
     }
 
     Window getWindow(Context context) {
@@ -179,13 +209,15 @@ public class Diooto {
         }
     }
 
-    public static void startImageActivity(Activity activity, Class clazz, DiootoConfig diootoConfig) {
+    Diooto startImageActivity(Class clazz) {
+        Activity activity = scanForActivity(mContext);
         if (activity != null && clazz != null) {
             Intent intent = new Intent(activity, clazz);
             intent.putExtra(Diooto.KEY_CONFIG, diootoConfig);
             activity.startActivity(intent);
             activity.overridePendingTransition(0, 0);
         }
+        return this;
     }
 
     AppCompatActivity getAppCompActivity(Context context) {

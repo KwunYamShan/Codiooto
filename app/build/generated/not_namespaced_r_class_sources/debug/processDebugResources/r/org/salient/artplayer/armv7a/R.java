@@ -13,6 +13,6 @@ public final class R {
         private string() {}
 
         public static final int app_name = 0x7f0c001d;
-        public static final int ijkplayer_dummy = 0x7f0c0025;
+        public static final int ijkplayer_dummy = 0x7f0c0021;
     }
 }

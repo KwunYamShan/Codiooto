@@ -12,7 +12,7 @@
 7. 适配GIF
 8. 适配视频
 ## 使用
-####添加依赖 
+#### 添加依赖 
 1. App下的build.gradle添加依赖类库  [ ![Download](https://api.bintray.com/packages/kwunyamshan/maven/Codiooto/images/download.svg?version=1.0.0) ](https://bintray.com/kwunyamshan/maven/Codiooto/1.0.0/link)
 ```Java
     //版本号:x.x.x替换Download中的版本号
@@ -39,7 +39,7 @@ allprojects {
     }
 }
 ```
-####图片模式
+#### 图片模式
 ```Java
                     Diooto diooto = new Diooto(context)
                             .urls(activityPosition == 2 ? longImageUrl : normalImageUlr)
@@ -60,7 +60,7 @@ allprojects {
                             })
                             .start(ImageActivity.class);
 ```
-####视频模式
+#### 视频模式
 ```Java
  //加载视频
                     Diooto diooto = new Diooto(context)
@@ -92,9 +92,9 @@ allprojects {
                             .onFinish(dragDiootoView -> MediaPlayerManager.instance().releasePlayerAndView(context))
                             .start(ImageActivity.class);
 ```
-###在此感谢
-[特别感谢Diooto，支持原创。只是在原创的基础上进一步对UI与类库进行了分离](https://github.com/moyokoo/Diooto)
-原作者QQ群:[470160953](http://qm.qq.com/cgi-bin/qm/qr?k=PfTIlZp3p1_VBZwOMq_iFRBE6Xn89uz8)
+### 在此感谢
+  [特别感谢Diooto，支持原创。只是在原创的基础上进一步对UI与类库进行了分离](https://github.com/moyokoo/Diooto)
+  原作者QQ群:[470160953](http://qm.qq.com/cgi-bin/qm/qr?k=PfTIlZp3p1_VBZwOMq_iFRBE6Xn89uz8)
 
-###效果图
-<img src="https://github.com/moyokoo/Media/blob/master/diooto1.gif?raw=true" height="500"/><img src="https://github.com/moyokoo/Media/blob/master/diooto2.gif?raw=true" height="500"/><img src="https://github.com/moyokoo/Media/blob/master/diooto3.gif?raw=true" height="500"/>
+### 效果图
+  <img src="https://github.com/moyokoo/Media/blob/master/diooto1.gif?raw=true" height="500"/><img src="https://github.com/moyokoo/Media/blob/master/diooto2.gif?raw=true" height="500"/><img src="https://github.com/moyokoo/Media/blob/master/diooto3.gif?raw=true" height="500"/>

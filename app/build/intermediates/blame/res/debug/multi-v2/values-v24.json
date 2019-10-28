@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\KwunYamShan\\Desktop\\HBH\\Codiooto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\834eca7905aee2889751c58ccdb83b45\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-2\\files-2.1\\db98cd8ea577af255396fab1c5305a1e\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\b4b5102e2cf9cb605d3e0c8fb7ea10c7\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-2\\files-2.1\\2885317dd9c9268916fc6a02d0700023\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

@@ -12,8 +12,8 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int immersion_navigation_bar_view = 0x7f080062;
-        public static final int immersion_status_bar_view = 0x7f080063;
+        public static final int immersion_navigation_bar_view = 0x7f08005d;
+        public static final int immersion_status_bar_view = 0x7f08005e;
     }
     public static final class string {
         private string() {}

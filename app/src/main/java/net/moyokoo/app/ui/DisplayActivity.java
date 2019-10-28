@@ -183,6 +183,7 @@ public class DisplayActivity extends AppCompatActivity {
                                 });
                             })
                             .start(ImageActivity.class);
+
                 }
             });
         }

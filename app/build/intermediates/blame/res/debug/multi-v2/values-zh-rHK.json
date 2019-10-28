@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\KwunYamShan\\Desktop\\HBH\\Codiooto\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rHK\\values-zh-rHK.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\834eca7905aee2889751c58ccdb83b45\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-2\\files-2.1\\db98cd8ea577af255396fab1c5305a1e\\res\\values-zh-rHK\\values-zh-rHK.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5fc49167be57ea7023a0363f6ddb7f30\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-2\\files-2.1\\40667913a2061534804e34ebe9b0036c\\res\\values-zh-rHK\\values-zh-rHK.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

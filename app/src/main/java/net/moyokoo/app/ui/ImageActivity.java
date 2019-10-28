@@ -33,13 +33,6 @@ public class ImageActivity extends AppCompatActivity {
     static IProgress iProgress;
     boolean isNeedAnimationForClickPosition = true;
 
-    public static void startImageActivity(Activity activity, DiootoConfig diootoConfig) {
-        Intent intent = new Intent(activity, ImageActivity.class);
-        intent.putExtra("config", diootoConfig);
-        activity.startActivity(intent);
-        activity.overridePendingTransition(0, 0);
-    }
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +41,7 @@ public class ImageActivity extends AppCompatActivity {
         iProgress = new DefaultPercentProgress();
         mViewPager = findViewById(R.id.viewPager);
         indicatorLayout = findViewById(R.id.indicatorLayout);
-        diootoConfig = getIntent().getParcelableExtra(Diooto.KEY_CONFIG);
+        diootoConfig = Diooto.getDiootoExtra(getIntent());
         //indicatorLayout.setVisibility(View.VISIBLE);
         int currentPosition = diootoConfig.getPosition();
         String[] imageUrls = diootoConfig.getImageUrls();

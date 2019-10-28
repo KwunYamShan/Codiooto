@@ -485,7 +485,6 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
-color sofia_navigation
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -580,7 +579,6 @@ dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
 dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
-dimen def_height
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_text_size
@@ -621,10 +619,6 @@ dimen design_tab_text_size
 dimen design_tab_text_size_2line
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
-dimen dp_10
-dimen dp_4
-dimen dp_40
-dimen dp_72
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -653,9 +647,6 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
-dimen sp_12
-dimen sp_14
-dimen sp_16
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -749,8 +740,6 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
-drawable brvah_sample_footer_loading
-drawable brvah_sample_footer_loading_progress
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -791,10 +780,6 @@ drawable salient_volume
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
-id BaseQuickAdapter_databinding_support
-id BaseQuickAdapter_dragging_support
-id BaseQuickAdapter_swiping_support
-id BaseQuickAdapter_viewholder_support
 id CTRL
 id FUNCTION
 id META
@@ -846,7 +831,6 @@ id clip_vertical
 id collapseActionView
 id collapsing_toolbar
 id container
-id content
 id contentLayout
 id contentPanel
 id controlPlane
@@ -907,13 +891,8 @@ id listMode
 id list_item
 id llAlert
 id llOperation
-id load_more_load_end_view
-id load_more_load_fail_view
-id load_more_loading_view
 id loading
 id loadingLayout
-id loading_progress
-id loading_text
 id masked
 id media_actions
 id message
@@ -921,7 +900,6 @@ id middle
 id mini
 id multiply
 id navigation_header_container
-id navigation_view
 id never
 id none
 id normal
@@ -979,7 +957,6 @@ id src_over
 id start
 id start_layout
 id status_bar_latest_event_content
-id status_view
 id submenuarrow
 id submit_area
 id tabMode
@@ -1009,7 +986,6 @@ id tv
 id tvAlert
 id tvConfirm
 id tvTitle
-id tv_prompt
 id uniform
 id up
 id useLogo
@@ -1062,7 +1038,6 @@ layout activity_image
 layout activity_main
 layout adapter_footer
 layout adapter_header
-layout brvah_quick_view_load_more
 layout content_item
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1102,7 +1077,6 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout simple_control_panel
-layout sofia_host_layout
 layout support_simple_spinner_dropdown_item
 mipmap avatar
 mipmap bg
@@ -1141,10 +1115,6 @@ string abc_toolbar_collapse_description
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
-string brvah_app_name
-string brvah_load_end
-string brvah_load_failed
-string brvah_loading
 string character_counter_pattern
 string ijkplayer_dummy
 string password_toggle_content_description
