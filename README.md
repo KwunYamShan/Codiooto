@@ -13,7 +13,7 @@
 8. 适配视频
 ## 使用
 #### 添加依赖 
-1. App下的build.gradle添加依赖类库  [ ![Download](https://api.bintray.com/packages/kwunyamshan/maven/Codiooto/images/download.svg?version=1.0.0) ](https://bintray.com/kwunyamshan/maven/Codiooto/1.0.0/link)
+1. App下的build.gradle添加依赖类库  [ ![Download](https://api.bintray.com/packages/kwunyamshan/maven/Codiooto/images/download.svg) ](https://bintray.com/kwunyamshan/maven/Codiooto/_latestVersion)
 ```Java
     //版本号:x.x.x替换Download中的版本号
     implementation 'com.wh.diooto:Codiooto:x.x.x'
@@ -94,6 +94,7 @@ allprojects {
 ```
 ### 在此感谢
   [特别感谢Diooto，支持原创。只是在原创的基础上进一步对UI与类库进行了分离](https://github.com/moyokoo/Diooto)
+  
   原作者QQ群:[470160953](http://qm.qq.com/cgi-bin/qm/qr?k=PfTIlZp3p1_VBZwOMq_iFRBE6Xn89uz8)
 
 ### 效果图

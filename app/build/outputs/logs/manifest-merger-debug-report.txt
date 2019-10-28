@@ -12,8 +12,7 @@ MERGED from [org.salient.artvideoplayer:artplayer-java:0.6.0] C:\Users\KwunYamSh
 MERGED from [org.salient.artvideoplayer:artplayer-ui:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\ad8ebcd36a7d271e3fa8afedccab04b6\AndroidManifest.xml:2:1-11:12
 MERGED from [org.salient.artvideoplayer:artplayer-ijk:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\73e1e0312db89b5320a3fe2648917616\AndroidManifest.xml:2:1-11:12
 MERGED from [org.salient.artvideoplayer:artplayer-armv7a:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\ba6ed7902bbfe689e709dbb64ebae7c1\AndroidManifest.xml:2:1-17:12
-MERGED from [me.panpf:sketch-gif:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\2a8dd678cf6bb3935bf13f634dbff34c\AndroidManifest.xml:2:1-13:12
-MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c7197014fbb739df45758fe783c7784f\AndroidManifest.xml:2:1-16:12
+MERGED from [me.panpf:sketch:2.7.1-rc01] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\e153961ac4b1242cf84872dde9f28ba8\AndroidManifest.xml:2:1-16:12
 MERGED from [com.gyf.immersionbar:immersionbar:2.3.3] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c0ae12f5bd16f29a4eb533a12e3647b5\AndroidManifest.xml:2:1-10:12
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\ac9351676fa27b2aff241da1cbe3aa59\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\820247f2e3a0b7cc646c18261059981f\AndroidManifest.xml:17:1-22:12
@@ -25,6 +24,7 @@ MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\KwunYa
 MERGED from [com.android.support:transition:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\f974fbe79b243e8339435f5f4a2c5a16\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\2885317dd9c9268916fc6a02d0700023\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\40667913a2061534804e34ebe9b0036c\AndroidManifest.xml:17:1-22:12
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.10] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\2f57e4e972ff2cc9ca48a34dca10c32c\AndroidManifest.xml:2:1-11:12
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\0c74fb8d3162279fe19985900995b9af\AndroidManifest.xml:2:1-9:12
 MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\b885e8f8ef2d1dbf1edf2fadcf08a351\AndroidManifest.xml:2:1-9:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\8adcbfeab3ab439ac10f3b257ea5191a\AndroidManifest.xml:17:1-22:12
@@ -56,8 +56,8 @@ ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifes
 		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:7:5-67
-MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c7197014fbb739df45758fe783c7784f\AndroidManifest.xml:11:5-67
-MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c7197014fbb739df45758fe783c7784f\AndroidManifest.xml:11:5-67
+MERGED from [me.panpf:sketch:2.7.1-rc01] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\e153961ac4b1242cf84872dde9f28ba8\AndroidManifest.xml:11:5-67
+MERGED from [me.panpf:sketch:2.7.1-rc01] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\e153961ac4b1242cf84872dde9f28ba8\AndroidManifest.xml:11:5-67
 	android:name
 		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:7:22-64
 uses-permission#android.permission.WAKE_LOCK
@@ -96,8 +96,8 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:17:5-79
 MERGED from [org.salient.artvideoplayer:artplayer-java:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\ae3ddb1d0b0843ffaa0e4c3b2ebfd449\AndroidManifest.xml:11:5-79
 MERGED from [org.salient.artvideoplayer:artplayer-java:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\ae3ddb1d0b0843ffaa0e4c3b2ebfd449\AndroidManifest.xml:11:5-79
-MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c7197014fbb739df45758fe783c7784f\AndroidManifest.xml:12:5-79
-MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c7197014fbb739df45758fe783c7784f\AndroidManifest.xml:12:5-79
+MERGED from [me.panpf:sketch:2.7.1-rc01] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\e153961ac4b1242cf84872dde9f28ba8\AndroidManifest.xml:12:5-79
+MERGED from [me.panpf:sketch:2.7.1-rc01] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\e153961ac4b1242cf84872dde9f28ba8\AndroidManifest.xml:12:5-79
 	android:name
 		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:17:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
@@ -108,10 +108,8 @@ application
 ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:20:5-40:19
 MERGED from [org.salient.artvideoplayer:artplayer-armv7a:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\ba6ed7902bbfe689e709dbb64ebae7c1\AndroidManifest.xml:11:5-15:19
 MERGED from [org.salient.artvideoplayer:artplayer-armv7a:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\ba6ed7902bbfe689e709dbb64ebae7c1\AndroidManifest.xml:11:5-15:19
-MERGED from [me.panpf:sketch-gif:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\2a8dd678cf6bb3935bf13f634dbff34c\AndroidManifest.xml:11:5-20
-MERGED from [me.panpf:sketch-gif:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\2a8dd678cf6bb3935bf13f634dbff34c\AndroidManifest.xml:11:5-20
-MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c7197014fbb739df45758fe783c7784f\AndroidManifest.xml:14:5-20
-MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c7197014fbb739df45758fe783c7784f\AndroidManifest.xml:14:5-20
+MERGED from [me.panpf:sketch:2.7.1-rc01] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\e153961ac4b1242cf84872dde9f28ba8\AndroidManifest.xml:14:5-20
+MERGED from [me.panpf:sketch:2.7.1-rc01] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\e153961ac4b1242cf84872dde9f28ba8\AndroidManifest.xml:14:5-20
 	android:supportsRtl
 		ADDED from C:\Users\KwunYamShan\Desktop\HBH\Codiooto\app\src\main\AndroidManifest.xml:25:9-35
 	android:label
@@ -172,10 +170,8 @@ MERGED from [org.salient.artvideoplayer:artplayer-ijk:0.6.0] C:\Users\KwunYamSha
 MERGED from [org.salient.artvideoplayer:artplayer-ijk:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\73e1e0312db89b5320a3fe2648917616\AndroidManifest.xml:7:5-9:41
 MERGED from [org.salient.artvideoplayer:artplayer-armv7a:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\ba6ed7902bbfe689e709dbb64ebae7c1\AndroidManifest.xml:7:5-9:41
 MERGED from [org.salient.artvideoplayer:artplayer-armv7a:0.6.0] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\ba6ed7902bbfe689e709dbb64ebae7c1\AndroidManifest.xml:7:5-9:41
-MERGED from [me.panpf:sketch-gif:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\2a8dd678cf6bb3935bf13f634dbff34c\AndroidManifest.xml:7:5-9:41
-MERGED from [me.panpf:sketch-gif:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\2a8dd678cf6bb3935bf13f634dbff34c\AndroidManifest.xml:7:5-9:41
-MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c7197014fbb739df45758fe783c7784f\AndroidManifest.xml:7:5-9:41
-MERGED from [me.panpf:sketch:2.6.2-b1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c7197014fbb739df45758fe783c7784f\AndroidManifest.xml:7:5-9:41
+MERGED from [me.panpf:sketch:2.7.1-rc01] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\e153961ac4b1242cf84872dde9f28ba8\AndroidManifest.xml:7:5-9:41
+MERGED from [me.panpf:sketch:2.7.1-rc01] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\e153961ac4b1242cf84872dde9f28ba8\AndroidManifest.xml:7:5-9:41
 MERGED from [com.gyf.immersionbar:immersionbar:2.3.3] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c0ae12f5bd16f29a4eb533a12e3647b5\AndroidManifest.xml:6:5-8:41
 MERGED from [com.gyf.immersionbar:immersionbar:2.3.3] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\c0ae12f5bd16f29a4eb533a12e3647b5\AndroidManifest.xml:6:5-8:41
 MERGED from [com.android.support:support-v4:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\ac9351676fa27b2aff241da1cbe3aa59\AndroidManifest.xml:20:5-44
@@ -198,6 +194,8 @@ MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\KwunYamSh
 MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\2885317dd9c9268916fc6a02d0700023\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\40667913a2061534804e34ebe9b0036c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:27.1.1] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\40667913a2061534804e34ebe9b0036c\AndroidManifest.xml:20:5-44
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.10] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\2f57e4e972ff2cc9ca48a34dca10c32c\AndroidManifest.xml:7:5-9:41
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.10] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\2f57e4e972ff2cc9ca48a34dca10c32c\AndroidManifest.xml:7:5-9:41
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\0c74fb8d3162279fe19985900995b9af\AndroidManifest.xml:5:5-7:41
 MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.8] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\0c74fb8d3162279fe19985900995b9af\AndroidManifest.xml:5:5-7:41
 MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8] C:\Users\KwunYamShan\.gradle\caches\transforms-2\files-2.1\b885e8f8ef2d1dbf1edf2fadcf08a351\AndroidManifest.xml:5:5-7:41

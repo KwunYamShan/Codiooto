@@ -38,9 +38,9 @@ dependencies {
     implementation 'org.salient.artvideoplayer:artplayer-ui:0.6.0'
     implementation 'org.salient.artvideoplayer:artplayer-ijk:0.6.0'
     implementation "org.salient.artvideoplayer:artplayer-armv7a:0.6.0"
-    implementation 'me.panpf:sketch-gif:2.6.2-b1'
-    implementation 'me.panpf:sketch:2.6.2-b1'
+    implementation 'me.panpf:sketch-gif:2.7.1-rc01'
+    implementation 'me.panpf:sketch:2.7.1-rc01'
     implementation 'com.gyf.immersionbar:immersionbar:2.3.3'
-    api project(':diooto')
-    //api androidDependencies.codiooto
+//    api project(':diooto')
+    api androidDependencies.codiooto
 }

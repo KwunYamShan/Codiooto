@@ -2647,6 +2647,23 @@
             "outputFile": "C:\\Users\\KwunYamShan\\Desktop\\HBH\\Codiooto\\app\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
             "map": [
                 {
+                    "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-2\\files-2.1\\3c39f8c378553f684964ce9260087eb5\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,211",
+                        "endColumns": "155,147",
+                        "endOffsets": "206,354"
+                    },
+                    "to": {
+                        "startLines": "2243,2244",
+                        "startColumns": "4,4",
+                        "startOffsets": "156246,156402",
+                        "endColumns": "155,147",
+                        "endOffsets": "156397,156545"
+                    }
+                },
+                {
                     "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-2\\files-2.1\\abc01137d66d3ba38d0add88a66a578f\\res\\values\\values.xml",
                     "from": {
                         "startLines": "3,4,5,6,7,8,9,2",
@@ -2803,23 +2820,6 @@
                         "startOffsets": "17280,17604,17851,17898,17953,18290,18344,18396,18445,18506",
                         "endColumns": "39,42,46,54,44,53,51,48,60,49",
                         "endOffsets": "17315,17642,17893,17948,17993,18339,18391,18440,18501,18551"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\KwunYamShan\\.gradle\\caches\\transforms-2\\files-2.1\\2a8dd678cf6bb3935bf13f634dbff34c\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,211",
-                        "endColumns": "155,147",
-                        "endOffsets": "206,354"
-                    },
-                    "to": {
-                        "startLines": "2243,2244",
-                        "startColumns": "4,4",
-                        "startOffsets": "156246,156402",
-                        "endColumns": "155,147",
-                        "endOffsets": "156397,156545"
                     }
                 },
                 {
