@@ -42,18 +42,20 @@ public class ImageFragment extends Fragment {
     FrameLayout            loadingLayout;
     boolean                shouldShowAnimation = false;
     boolean                hasCache;
+    private boolean isAnim;
 
     public DragDiootoView getDragDiootoView() {
         return dragDiootoView;
     }
 
-    public static ImageFragment newInstance(String url, int position, int type, boolean shouldShowAnimation, ContentViewOriginModel contentViewOriginModel) {
+    public static ImageFragment newInstance(String url, int position, int type, boolean shouldShowAnimation, ContentViewOriginModel contentViewOriginModel,boolean isAmin) {
         Bundle args = new Bundle();
         args.putString("url", url);
         args.putInt("position", position);
         args.putBoolean("shouldShowAnimation", shouldShowAnimation);
         args.putInt("type", type);
         args.putParcelable("model", contentViewOriginModel);
+        args.putBoolean("isAnim",isAmin);
         ImageFragment fragment = new ImageFragment();
         fragment.setArguments(args);
         return fragment;
@@ -68,11 +70,13 @@ public class ImageFragment extends Fragment {
             position = getArguments().getInt("position");
             shouldShowAnimation = getArguments().getBoolean("shouldShowAnimation");
             type = getArguments().getInt("type");
+            isAnim = getArguments().getBoolean("isAnim");
             contentViewOriginModel = getArguments().getParcelable("model");
         }
         loadingLayout = view.findViewById(R.id.loadingLayout);
         dragDiootoView = view.findViewById(R.id.dragDiootoView);
         dragDiootoView.setPhoto(type == DiootoConfig.PHOTO);
+        dragDiootoView.setAnim(isAnim);
         if (ImageActivity.iProgress != null) {
             ImageActivity.iProgress.attach(position, loadingLayout);
         }

@@ -4,9 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -35,11 +33,11 @@ public class DragDiootoView extends FrameLayout {
     private float mTranslateX;
 
     private final float DEFAULT_MIN_SCALE = 0.3f;
-    private int MAX_TRANSLATE_Y = 0;
-    private int MAX_Y = 0;
+    private       int   MAX_TRANSLATE_Y   = 0;
+    private       int   MAX_Y             = 0;
 
     FrameLayout contentLayout;
-    View backgroundView;
+    View        backgroundView;
 
     private final long DEFAULT_DURATION = 300;
     long animationDuration = DEFAULT_DURATION;
@@ -56,29 +54,30 @@ public class DragDiootoView extends FrameLayout {
 
     private int mLastY;
 
-    int minWidth = 0;
+    int minWidth  = 0;
     int minHeight = 0;
 
-    int releaseLeft = 0;
-    float releaseY = 0;
-    int releaseWidth = 0;
-    int releaseHeight = 0;
-    int realWidth;
-    int realHeight;
-    int touchSlop = ViewConfiguration.getTouchSlop();
+    int   releaseLeft   = 0;
+    float releaseY      = 0;
+    int   releaseWidth  = 0;
+    int   releaseHeight = 0;
+    int   realWidth;
+    int   realHeight;
+    int   touchSlop     = ViewConfiguration.getTouchSlop();
 
-    int imageLeftOfAnimatorEnd = 0;
-    int imageTopOfAnimatorEnd = 0;
-    int imageWidthOfAnimatorEnd = 0;
+    int imageLeftOfAnimatorEnd   = 0;
+    int imageTopOfAnimatorEnd    = 0;
+    int imageWidthOfAnimatorEnd  = 0;
     int imageHeightOfAnimatorEnd = 0;
 
     MarginViewWrapper imageWrapper;
-    boolean isMulitFinger = false;
-    boolean isDrag = false;
-    boolean isLongHeightImage = false;//是否是高度长图
-    boolean isLongWidthImage = false;//是否是宽度长图
-    boolean isAnimating = false;//是否在动画中
-    boolean isPhoto = false;
+    boolean           isMulitFinger     = false;
+    boolean           isDrag            = false;
+    boolean           isLongHeightImage = false;//是否是高度长图
+    boolean           isLongWidthImage  = false;//是否是宽度长图
+    boolean           isAnimating       = false;//是否在动画中
+    boolean           isPhoto           = false;
+    boolean           isAnim;
 
     public DragDiootoView(Context context) {
         this(context, null);
@@ -241,14 +240,27 @@ public class DragDiootoView extends FrameLayout {
             }
         }
         changeImageViewToCenterCrop();
-        ValueAnimator valueAnimator = ValueAnimator.ofFloat(releaseY, mOriginTop);
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float value = (float) animation.getAnimatedValue();
-                min2NormalAndDrag2Min(value, releaseY, mOriginTop, releaseLeft, mOriginLeft, releaseWidth, mOriginWidth, releaseHeight, mOriginHeight);
-            }
-        });
+
+        ValueAnimator valueAnimator;
+        if (isAnim) {
+            valueAnimator = ValueAnimator.ofFloat(releaseY, mOriginTop);
+            valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    float value = (float) animation.getAnimatedValue();
+                    min2NormalAndDrag2Min(value, releaseY, mOriginTop, releaseLeft, mOriginLeft, releaseWidth, mOriginWidth, releaseHeight, mOriginHeight);
+                }
+            });
+        } else {
+            valueAnimator = ValueAnimator.ofFloat(mAlpha, 0);
+            valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    mAlpha = (Float) valueAnimator.getAnimatedValue();
+                    imageWrapper.viewWrapper.setAlpha(mAlpha);
+                }
+            });
+        }
         valueAnimator.setDuration(animationDuration).start();
         if (onReleaseListener != null) {
             onReleaseListener.onRelease(false, true);
@@ -285,7 +297,7 @@ public class DragDiootoView extends FrameLayout {
         if (sizeCalculator.canUseReadModeByHeight(realWidth, realHeight) ||
                 sizeCalculator.canUseReadModeByWidth(realWidth, realHeight) ||
                 screenWidth / (float) screenHeight < realWidth / (float) realHeight
-                ) {
+        ) {
             isLongHeightImage = sizeCalculator.canUseReadModeByHeight(realWidth, realHeight) && getContentView() instanceof SketchImageView;
             isLongWidthImage = sizeCalculator.canUseReadModeByWidth(realWidth, realHeight) && getContentView() instanceof SketchImageView;
             newWidth = screenWidth;
@@ -301,9 +313,9 @@ public class DragDiootoView extends FrameLayout {
         final int endLeft = (screenWidth - newWidth) / 2;
         final int endHeight = newHeight;
         final int endWidth = newWidth;
-//        if (targetImageHeight == endHeight && targetImageWidth == endWidth) {
-//            return;
-//        }
+        //        if (targetImageHeight == endHeight && targetImageWidth == endWidth) {
+        //            return;
+        //        }
 
         if (showRightNow) {
             targetImageHeight = endHeight;
@@ -635,7 +647,7 @@ public class DragDiootoView extends FrameLayout {
 
     public class MarginViewWrapper {
         private MarginLayoutParams params;
-        private View viewWrapper;
+        private View               viewWrapper;
 
         MarginViewWrapper(View view) {
             this.viewWrapper = view;
@@ -751,11 +763,11 @@ public class DragDiootoView extends FrameLayout {
         }
     }
 
-    private OnFinishListener onFinishListener;
-    private OnDragListener mDragListener;
+    private OnFinishListener     onFinishListener;
+    private OnDragListener       mDragListener;
     private OnShowFinishListener onShowFinishListener;
-    private OnClickListener onClickListener;
-    private OnReleaseListener onReleaseListener;
+    private OnClickListener      onClickListener;
+    private OnReleaseListener    onReleaseListener;
 
     public void setOnReleaseListener(OnReleaseListener onReleaseListener) {
         this.onReleaseListener = onReleaseListener;
@@ -813,5 +825,9 @@ public class DragDiootoView extends FrameLayout {
 
     public void setPhoto(boolean photo) {
         isPhoto = photo;
+    }
+
+    public void setAnim(boolean anim) {
+        isAnim = anim;
     }
 }

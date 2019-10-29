@@ -16,7 +16,7 @@ import net.moyokoo.app.R;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
-    String[] texts = new String[]{
+    String[]     texts = new String[]{
             "加载列表",
             "加载单张",
             "加载长图",
@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     bundle.putInt("position", holder.getAdapterPosition());
                     DisplayActivity.newIntent(MainActivity.this, bundle);
-
                 }
             });
         }

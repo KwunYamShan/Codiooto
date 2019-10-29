@@ -41,6 +41,6 @@ dependencies {
     implementation 'me.panpf:sketch-gif:2.7.1-rc01'
     implementation 'me.panpf:sketch:2.7.1-rc01'
     implementation 'com.gyf.immersionbar:immersionbar:2.3.3'
-//    api project(':diooto')
-    api androidDependencies.codiooto
+    api project(':diooto')
+//    api androidDependencies.codiooto
 }

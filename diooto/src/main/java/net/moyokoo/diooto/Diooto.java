@@ -40,7 +40,7 @@ public class Diooto {
     private DiootoConfig diootoConfig;
 
     public static DiootoConfig getDiootoExtra(Intent intent) {
-        if (intent!=null){
+        if (intent != null) {
             return intent.getParcelableExtra(Diooto.KEY_CONFIG);
         }
         return null;
@@ -66,11 +66,30 @@ public class Diooto {
         return this;
     }
 
+    /**
+     * 当前的Activity是否为沉浸式,默认为false
+     *
+     * @param immersive
+     * @return
+     */
     public Diooto immersive(boolean immersive) {
         this.diootoConfig.setImmersive(immersive);
         return this;
     }
 
+    /**
+     * 是否需要退出动画
+     * @param isAmin
+     * @return
+     */
+    public Diooto isAnim(boolean isAmin){
+        this.diootoConfig.setAnim(isAmin);
+        return this;
+    }
+
+    /**
+     * 点击的位置 如果你的RecyclerView有头部View  则使用 .position(holder.getAdapterPosition(),headSize) headSize为头部布局数量
+     */
     public Diooto position(int position) {
         return position(position, 0);
     }
@@ -87,7 +106,13 @@ public class Diooto {
         return views(views);
     }
 
-
+    /**
+     * 可以传recylcerview自动识别(需要传在item布局中的viewId)  也可以手动传view数组
+     *
+     * @param recyclerView
+     * @param viewId
+     * @return
+     */
     public Diooto views(RecyclerView recyclerView, @IdRes int viewId) {
         List<View> originImageList = new ArrayList<>();
         int childCount = recyclerView.getChildCount();
@@ -114,6 +139,21 @@ public class Diooto {
         View[] views = new View[originImageList.size()];
         for (int i = 0; i < originImageList.size(); i++) {
             views[i] = originImageList.get(i);
+        }
+        return views(views);
+    }
+
+    /**
+     * 供viewpager使用
+     *
+     * @param totalCount
+     * @param view
+     * @return
+     */
+    public Diooto views(int totalCount, View view) {
+        View[] views = new View[totalCount];
+        for (int i = 0; i < totalCount; i++) {
+            views[i] = view;
         }
         return views(views);
     }
@@ -154,50 +194,27 @@ public class Diooto {
         return this;
     }
 
-
+    /**
+     * 给传入的class绑定数据并自动打开对应的activity
+     *
+     * @return
+     */
     public Diooto start(Class clazz) {
-        if (!diootoConfig.isImmersive()) {
-            Window window = getWindow(mContext);
-            if ((window.getAttributes().flags & WindowManager.LayoutParams.FLAG_FULLSCREEN)
-                    == WindowManager.LayoutParams.FLAG_FULLSCREEN) {
-                diootoConfig.setFullScreen(true);
-            }
-            if (!diootoConfig.isFullScreen()) {
-                window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                    window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                }
-            }
-        }
+        setWindow();
         startImageActivity(clazz);
         return this;
     }
-    public Diooto setWindow() {
-        if (!diootoConfig.isImmersive()) {
-            Window window = getWindow(mContext);
-            if ((window.getAttributes().flags & WindowManager.LayoutParams.FLAG_FULLSCREEN)
-                    == WindowManager.LayoutParams.FLAG_FULLSCREEN) {
-                diootoConfig.setFullScreen(true);
-            }
-            if (!diootoConfig.isFullScreen()) {
-                window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                    window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                }
-            }
-        }
-        return this;
+
+    /**
+     * 需要调用者自行调用打开activity
+     *  打开activity的方法参照startImageActivity(Class clazz)
+     * @return
+     */
+    public Diooto start() {
+        return setWindow();
     }
 
-    public DiootoConfig getConfig(){
+    public DiootoConfig getConfig() {
         return diootoConfig;
     }
 
@@ -213,7 +230,7 @@ public class Diooto {
         Activity activity = scanForActivity(mContext);
         if (activity != null && clazz != null) {
             Intent intent = new Intent(activity, clazz);
-            intent.putExtra(Diooto.KEY_CONFIG, diootoConfig);
+            intent.putExtra(Diooto.KEY_CONFIG, getConfig());
             activity.startActivity(intent);
             activity.overridePendingTransition(0, 0);
         }
@@ -239,6 +256,27 @@ public class Diooto {
             return scanForActivity(((ContextWrapper) context).getBaseContext());
         }
         return null;
+    }
+
+    public Diooto setWindow() {
+        if (!diootoConfig.isImmersive()) {
+            Window window = getWindow(mContext);
+            if ((window.getAttributes().flags & WindowManager.LayoutParams.FLAG_FULLSCREEN)
+                    == WindowManager.LayoutParams.FLAG_FULLSCREEN) {
+                diootoConfig.setFullScreen(true);
+            }
+            if (!diootoConfig.isFullScreen()) {
+                window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                    window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                }
+            }
+        }
+        return this;
     }
 
     public Diooto loadPhotoBeforeShowBigImage(OnLoadPhotoBeforeShowBigImageListener on) {

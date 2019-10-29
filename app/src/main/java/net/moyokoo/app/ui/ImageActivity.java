@@ -1,7 +1,5 @@
 package net.moyokoo.app.ui;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -46,11 +44,12 @@ public class ImageActivity extends AppCompatActivity {
         int currentPosition = diootoConfig.getPosition();
         String[] imageUrls = diootoConfig.getImageUrls();
         contentViewOriginModels = diootoConfig.getContentViewOriginModels();
+        boolean amin = diootoConfig.isAmin();
         fragmentList = new ArrayList<>();
         for (int i = 0; i < contentViewOriginModels.size(); i++) {
             ImageFragment imageFragment = ImageFragment.newInstance(
                     imageUrls[i], i, diootoConfig.getType(),
-                    contentViewOriginModels.size() == 1 || diootoConfig.getPosition() == i, contentViewOriginModels.get(i)
+                    contentViewOriginModels.size() == 1 || diootoConfig.getPosition() == i, contentViewOriginModels.get(i),amin
             );
             fragmentList.add(imageFragment);
         }

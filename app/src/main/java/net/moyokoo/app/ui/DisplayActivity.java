@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -47,7 +50,6 @@ public class DisplayActivity extends AppCompatActivity {
             "http://img1.juimg.com/140908/330608-140ZP1531651.jpg",
             "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4252693316,3220141270&fm=26&gp=0.jpg",
             "https://github.com/moyokoo/Media/blob/master/diooto2.jpg?raw=true",
-            "https://github.com/moyokoo/Media/blob/master/diooto3.jpg?raw=true",
             "https://github.com/moyokoo/Media/blob/master/diooto4.jpg?raw=true",
             "https://github.com/moyokoo/Media/blob/master/diooto5.jpg?raw=true",
             "https://github.com/moyokoo/Media/blob/master/diooto6.jpg?raw=true",
@@ -58,13 +60,16 @@ public class DisplayActivity extends AppCompatActivity {
     Context context;
     int activityPosition;
     boolean isImmersive = true;
-
+    private ViewPager mViewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = this;
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_display);
+
+        mViewPager = findViewById(R.id.viewpager);
+        mViewPager.setAdapter(new ImageAdapter(this,normalImageUlr));
+
         ImmersionBar.with(this).init();
         activityPosition = getIntent().getIntExtra("position", 0);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -79,13 +84,7 @@ public class DisplayActivity extends AppCompatActivity {
         mRecyclerView.addHeaderView(LayoutInflater.from(this).inflate(R.layout.adapter_header, null));
         mRecyclerView.addFooterView(LayoutInflater.from(this).inflate(R.layout.adapter_footer, null));
 
-//        findViewById(R.id.backdrop).setOnClickListener(v -> {
-//            Sketch.with(DisplayActivity.this).getConfiguration().getDiskCache().clear();
-//            Sketch.with(DisplayActivity.this).getConfiguration().getBitmapPool().clear();
-//            Sketch.with(DisplayActivity.this).getConfiguration().getMemoryCache().clear();
-//        });
     }
-
 
     public static void newIntent(Activity activity, Bundle bundle) {
         Intent intent = new Intent(activity, DisplayActivity.class);
@@ -133,6 +132,7 @@ public class DisplayActivity extends AppCompatActivity {
                             .position(holder.getAdapterPosition())
                             .views(holder.srcImageView)
                             .type(DiootoConfig.VIDEO)
+                            .isAnim(true)
                             .immersive(isImmersive)
                             //提供视频View
                             .onProvideVideoView(() -> new VideoView(context))
@@ -164,6 +164,7 @@ public class DisplayActivity extends AppCompatActivity {
                             .type(DiootoConfig.PHOTO)
                             .immersive(isImmersive)
                             .position(0)
+                            .isAnim(true)
                             .views(views[holder.getAdapterPosition()])
                             .loadPhotoBeforeShowBigImage((sketchImageView, position1) -> {
                                 sketchImageView.displayImage(normalImageUlr[position]);
@@ -174,10 +175,11 @@ public class DisplayActivity extends AppCompatActivity {
                             .urls(activityPosition == 2 ? longImageUrl : normalImageUlr)
                             .type(DiootoConfig.PHOTO)
                             .immersive(isImmersive)
+                            .isAnim(true)
                             .position(holder.getAdapterPosition(), 1)
                             .views(mRecyclerView, R.id.srcImageView)
                             .loadPhotoBeforeShowBigImage((sketchImageView, position12) -> {
-                                sketchImageView.displayImage(normalImageUlr[position]);
+                                sketchImageView.displayImage(activityPosition == 2 ? longImageUrl[position] : normalImageUlr[position]);
                                 sketchImageView.setOnLongClickListener(v -> {
                                     Toast.makeText(DisplayActivity.this, "Long click", Toast.LENGTH_SHORT).show();
                                     return false;
@@ -228,4 +230,61 @@ public class DisplayActivity extends AppCompatActivity {
         MediaPlayerManager.instance().releasePlayerAndView(this);
     }
 
+
+    public class ImageAdapter extends PagerAdapter {
+
+        private final String[] mList;
+        private final Context mContext;
+
+        public ImageAdapter(Context context, String[] list) {
+            mContext = context;
+            mList = list;
+        }
+
+        @Override
+        public int getCount() {
+            return Integer.MAX_VALUE;
+        }
+
+        @Override
+        public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+
+
+            return view == object;
+        }
+
+        @NonNull
+        @Override
+        public Object instantiateItem(@NonNull ViewGroup container, int position) {
+            int index = position % mList.length;
+            View convertView = LayoutInflater.from(mContext).inflate(R.layout.item_image, null);
+            SketchImageView imageView = convertView.findViewById(R.id.imageView);
+            imageView.displayImage(mList[index]);
+            container.addView(convertView);
+            convertView.setOnClickListener(v -> {
+                Diooto diooto = new Diooto(mContext)
+                        .urls(mList)
+                        .type(DiootoConfig.PHOTO)
+                        .immersive(true)
+                        .isAnim(false)
+                        .position(index)
+                        .views(mList.length,imageView)
+                        .loadPhotoBeforeShowBigImage((sketchImageView, position12) -> {
+                            sketchImageView.displayImage(mList[index]);
+                            sketchImageView.setOnLongClickListener(v2 -> {
+                                Toast.makeText(DisplayActivity.this, "Long click", Toast.LENGTH_SHORT).show();
+                                return false;
+                            });
+                        })
+                        .start(ImageActivity.class);
+            });
+
+            return convertView;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            container.removeView((View) object);
+        }
+    }
 }
