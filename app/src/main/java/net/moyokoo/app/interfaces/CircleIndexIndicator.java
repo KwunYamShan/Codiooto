@@ -16,8 +16,8 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 public class CircleIndexIndicator implements IIndicator {
 
     private CircleIndicator circleIndicator;
-    private int originBottomMargin = 10;
-    private int currentBottomMargin = originBottomMargin;
+    private int             originBottomMargin  = 10;
+    private int             currentBottomMargin = originBottomMargin;
 
     @Override
     public void attach(FrameLayout parent) {

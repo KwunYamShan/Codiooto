@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Diooto</string>
+    <string name="app_name">Codoiooto</string>
+    <string name="title">%1$d/%2$d</string>
 </resources>

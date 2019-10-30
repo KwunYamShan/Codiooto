@@ -38,7 +38,7 @@ public class ImageFragment extends Fragment {
     String                 url;
     SketchImageView        sketchImageView;
     int                    position;
-    int                    type = DiootoConfig.PHOTO;
+    int                    type                = DiootoConfig.PHOTO;
     FrameLayout            loadingLayout;
     boolean                shouldShowAnimation = false;
     boolean                hasCache;
@@ -48,14 +48,14 @@ public class ImageFragment extends Fragment {
         return dragDiootoView;
     }
 
-    public static ImageFragment newInstance(String url, int position, int type, boolean shouldShowAnimation, ContentViewOriginModel contentViewOriginModel,boolean isAmin) {
+    public static ImageFragment newInstance(String url, int position, int type, boolean shouldShowAnimation, ContentViewOriginModel contentViewOriginModel, boolean isAmin) {
         Bundle args = new Bundle();
         args.putString("url", url);
         args.putInt("position", position);
         args.putBoolean("shouldShowAnimation", shouldShowAnimation);
         args.putInt("type", type);
         args.putParcelable("model", contentViewOriginModel);
-        args.putBoolean("isAnim",isAmin);
+        args.putBoolean("isAnim", isAmin);
         ImageFragment fragment = new ImageFragment();
         fragment.setArguments(args);
         return fragment;
@@ -138,6 +138,26 @@ public class ImageFragment extends Fragment {
             public void onDrag(DragDiootoView view, float moveX, float moveY) {
                 if (ImageActivity.iIndicator != null) {
                     ImageActivity.iIndicator.move(moveX, moveY);
+                }
+                if (mOnDragListener != null) {
+                    mOnDragListener.onDragListener();
+                }
+            }
+        });
+
+        dragDiootoView.setOnBackToMinListener(new DragDiootoView.OnBackToMinListener() {
+            @Override
+            public void onBackToMin() {
+                if (mOnBackListener != null) {
+                    mOnBackListener.onBackToMin2();
+                }
+            }
+        });
+        dragDiootoView.setOnBackToNormalListener(new DragDiootoView.OnBackToNormalListener() {
+            @Override
+            public void onBackToNormal() {
+                if (mOnBackListener != null) {
+                    mOnBackListener.onBackToNormal2();
                 }
             }
         });
@@ -350,5 +370,25 @@ public class ImageFragment extends Fragment {
                 ((SketchGifDrawable) lastDrawable).followPageVisible(isVisibleToUser, false);
             }
         }
+    }
+
+    public interface OnBackListener {
+        void onBackToMin2();
+
+        void onBackToNormal2();
+    }
+
+    private OnBackListener mOnBackListener;
+    public void setOnBackListener(OnBackListener listener) {
+        mOnBackListener = listener;
+    }
+
+    public interface OnDragListener {
+        void onDragListener();
+    }
+
+    private OnDragListener mOnDragListener;
+    public void setOnDragListener(OnDragListener listener) {
+        mOnDragListener = listener;
     }
 }

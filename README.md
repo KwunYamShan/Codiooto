@@ -95,7 +95,7 @@ allprojects {
                             .start(ImageActivity.class);
 ```
 ### 在此感谢
-  [特别感谢Diooto，支持原创。只是在原创的基础上进一步对UI与类库进行了分离](https://github.com/moyokoo/Diooto)
+  [特别感谢Diooto，支持原创。在原创的基础上将UI与类库进行了分离，并增加了一些功能](https://github.com/moyokoo/Diooto)
   
   原作者QQ群:[470160953](http://qm.qq.com/cgi-bin/qm/qr?k=PfTIlZp3p1_VBZwOMq_iFRBE6Xn89uz8)
 

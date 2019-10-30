@@ -33,10 +33,10 @@ public class CircleIndicator extends LinearLayout {
     private Animator mImmediateAnimatorIn;
 
     private int mIndicatorMargin = -1;
-    private int mIndicatorWidth = -1;
+    private int mIndicatorWidth  = -1;
     private int mIndicatorHeight = -1;
 
-    private int mLastPosition = -1;
+    private       int                  mLastPosition               = -1;
     private final OnPageChangeListener mInternalPageChangeListener = new OnPageChangeListener() {
 
         @Override

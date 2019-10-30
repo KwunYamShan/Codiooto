@@ -35,7 +35,7 @@ import me.panpf.sketch.SketchImageView;
 
 public class DisplayActivity extends AppCompatActivity {
     WrapRecyclerView mRecyclerView;
-    String[]         longImageUrl = new String[]{
+    String[]         longImageUrl   = new String[]{
             "https://ww4.sinaimg.cn/bmiddle/61e7945bly1fwnpjo7er0j215o6u77o1.jpg",
             "http://wx3.sinaimg.cn/large/9f780829ly1fwvwhq9cg3j2cn40e2npj.jpg",
             "https://wx2.sinaimg.cn/mw600/6d239c49ly1fwsvs7rtocj20k3cmpkjs.jpg",
@@ -49,7 +49,7 @@ public class DisplayActivity extends AppCompatActivity {
     String[] normalImageUlr = new String[]{
             "http://img1.juimg.com/140908/330608-140ZP1531651.jpg",
             "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4252693316,3220141270&fm=26&gp=0.jpg",
-            "https://github.com/moyokoo/Media/blob/master/diooto2.jpg?raw=true",
+            "123",
             "https://github.com/moyokoo/Media/blob/master/diooto4.jpg?raw=true",
             "https://github.com/moyokoo/Media/blob/master/diooto5.jpg?raw=true",
             "https://github.com/moyokoo/Media/blob/master/diooto6.jpg?raw=true",
@@ -57,10 +57,11 @@ public class DisplayActivity extends AppCompatActivity {
             "https://github.com/moyokoo/Media/blob/master/diooto8.png?raw=true",
             "https://github.com/moyokoo/Media/blob/master/diooto9.jpg?raw=true",
     };
-    Context context;
-    int activityPosition;
-    boolean isImmersive = true;
+    Context          context;
+    int              activityPosition;
+    boolean          isImmersive    = true;
     private ViewPager mViewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +69,7 @@ public class DisplayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display);
 
         mViewPager = findViewById(R.id.viewpager);
-        mViewPager.setAdapter(new ImageAdapter(this,normalImageUlr));
+        mViewPager.setAdapter(new ImageAdapter(this, normalImageUlr));
 
         ImmersionBar.with(this).init();
         activityPosition = getIntent().getIntExtra("position", 0);
@@ -176,7 +177,7 @@ public class DisplayActivity extends AppCompatActivity {
                             .type(DiootoConfig.PHOTO)
                             .immersive(isImmersive)
                             .isAnim(true)
-                            .position(holder.getAdapterPosition(), 1)
+                            .position(holder.getAdapterPosition(),1)
                             .views(mRecyclerView, R.id.srcImageView)
                             .loadPhotoBeforeShowBigImage((sketchImageView, position12) -> {
                                 sketchImageView.displayImage(activityPosition == 2 ? longImageUrl[position] : normalImageUlr[position]);
@@ -234,7 +235,7 @@ public class DisplayActivity extends AppCompatActivity {
     public class ImageAdapter extends PagerAdapter {
 
         private final String[] mList;
-        private final Context mContext;
+        private final Context  mContext;
 
         public ImageAdapter(Context context, String[] list) {
             mContext = context;
@@ -268,7 +269,7 @@ public class DisplayActivity extends AppCompatActivity {
                         .immersive(true)
                         .isAnim(false)
                         .position(index)
-                        .views(mList.length,imageView)
+                        .views(mList.length, imageView)
                         .loadPhotoBeforeShowBigImage((sketchImageView, position12) -> {
                             sketchImageView.displayImage(mList[index]);
                             sketchImageView.setOnLongClickListener(v2 -> {

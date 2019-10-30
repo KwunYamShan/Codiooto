@@ -150,6 +150,10 @@ public class DragDiootoView extends FrameLayout {
             onReleaseListener.onRelease(true, false);
         }
         changeBackgroundViewAlpha(false);
+
+        if (mOnBackToNormalListener != null) {
+            mOnBackToNormalListener.onBackToNormal();
+        }
     }
 
     void min2NormalAndDrag2Min(float currentY, float startY, float endY, float startLeft, float endLeft,
@@ -266,6 +270,10 @@ public class DragDiootoView extends FrameLayout {
             onReleaseListener.onRelease(false, true);
         }
         changeBackgroundViewAlpha(true);
+
+        if (mOnBackToMinListener !=null){
+            mOnBackToMinListener.onBackToMin();
+        }
     }
 
 
@@ -763,11 +771,21 @@ public class DragDiootoView extends FrameLayout {
         }
     }
 
-    private OnFinishListener     onFinishListener;
-    private OnDragListener       mDragListener;
-    private OnShowFinishListener onShowFinishListener;
-    private OnClickListener      onClickListener;
-    private OnReleaseListener    onReleaseListener;
+    private OnFinishListener       onFinishListener;
+    private OnDragListener         mDragListener;
+    private OnShowFinishListener   onShowFinishListener;
+    private OnClickListener        onClickListener;
+    private OnReleaseListener      onReleaseListener;
+    private OnBackToMinListener    mOnBackToMinListener;
+    private OnBackToNormalListener mOnBackToNormalListener;
+
+    public void setOnBackToNormalListener(OnBackToNormalListener onBackToNormalListener) {
+        this.mOnBackToNormalListener = onBackToNormalListener;
+    }
+
+    public void setOnBackToMinListener(OnBackToMinListener onBackToMinListener) {
+        this.mOnBackToMinListener = onBackToMinListener;
+    }
 
     public void setOnReleaseListener(OnReleaseListener onReleaseListener) {
         this.onReleaseListener = onReleaseListener;
@@ -809,6 +827,15 @@ public class DragDiootoView extends FrameLayout {
         void onClick(DragDiootoView dragDiootoView);
     }
 
+    public interface OnBackToMinListener {
+        //手指释放后，view缩放动画，一般后续会关闭该页面
+        void onBackToMin();
+    }
+
+    public interface OnBackToNormalListener {
+        //手指释放后，页面回到原始状态的监听
+        void onBackToNormal();
+    }
 
     //获得可滑动view的布局中添加的子view
     public View getContentView() {
