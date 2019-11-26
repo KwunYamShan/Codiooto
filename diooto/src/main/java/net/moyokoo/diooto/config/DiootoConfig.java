@@ -11,6 +11,7 @@ public class DiootoConfig implements Parcelable {
     public static int VIDEO = 2;
     private int type = PHOTO;
     private String[] imageUrls;
+    private String[] originalUrls;
     private boolean isFullScreen = false;
     private List<ContentViewOriginModel> contentViewOriginModels;
     private int position;
@@ -65,6 +66,14 @@ public class DiootoConfig implements Parcelable {
         this.imageUrls = imageUrls;
     }
 
+    public String[] getOriginalUrls() {
+        return originalUrls;
+    }
+
+    public void setOriginalUrls(String[] originalUrls) {
+        this.originalUrls = originalUrls;
+    }
+
     public boolean isFullScreen() {
         return isFullScreen;
     }
@@ -93,6 +102,7 @@ public class DiootoConfig implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(this.type);
         dest.writeStringArray(this.imageUrls);
+        dest.writeStringArray(this.originalUrls);
         dest.writeByte(this.isFullScreen ? (byte) 1 : (byte) 0);
         dest.writeTypedList(this.contentViewOriginModels);
         dest.writeInt(this.position);
@@ -104,6 +114,7 @@ public class DiootoConfig implements Parcelable {
     protected DiootoConfig(Parcel in) {
         this.type = in.readInt();
         this.imageUrls = in.createStringArray();
+        this.originalUrls = in.createStringArray();
         this.isFullScreen = in.readByte() != 0;
         this.contentViewOriginModels = in.createTypedArrayList(ContentViewOriginModel.CREATOR);
         this.position = in.readInt();

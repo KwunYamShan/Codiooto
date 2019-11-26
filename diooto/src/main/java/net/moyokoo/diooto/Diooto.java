@@ -61,6 +61,11 @@ public class Diooto {
         return this;
     }
 
+    public Diooto originalUrls(String[] originalUrls) {
+        this.diootoConfig.setOriginalUrls(originalUrls);
+        return this;
+    }
+
     public Diooto type(int type) {
         this.diootoConfig.setType(type);
         return this;
