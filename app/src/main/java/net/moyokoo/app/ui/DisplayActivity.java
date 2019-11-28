@@ -177,7 +177,7 @@ public class DisplayActivity extends AppCompatActivity {
                             .type(DiootoConfig.PHOTO)
                             .immersive(isImmersive)
                             .isAnim(true)
-                            .position(holder.getAdapterPosition(),1)
+                            .position(holder.getAdapterPosition(),1,1)
                             .views(mRecyclerView, R.id.srcImageView)
                             .loadPhotoBeforeShowBigImage((sketchImageView, position12) -> {
                                 sketchImageView.displayImage(activityPosition == 2 ? longImageUrl[position] : normalImageUlr[position]);

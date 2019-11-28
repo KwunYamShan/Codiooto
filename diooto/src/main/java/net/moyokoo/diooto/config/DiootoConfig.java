@@ -17,6 +17,7 @@ public class DiootoConfig implements Parcelable {
     private int position;
     private boolean immersive;
     private int headerSize;
+    private int footerSize;
     private boolean isAnim;
 
     public int getHeaderSize() {
@@ -27,7 +28,16 @@ public class DiootoConfig implements Parcelable {
         this.headerSize = headerSize;
     }
 
-    public boolean isImmersive() {
+  public int getFooterSize() {
+    return footerSize;
+  }
+
+  public void setFooterSize(int footerSize) {
+    this.footerSize = footerSize;
+  }
+
+
+  public boolean isImmersive() {
         return immersive;
     }
 
@@ -109,6 +119,7 @@ public class DiootoConfig implements Parcelable {
         dest.writeByte(this.immersive ? (byte) 1 : (byte) 0);
         dest.writeByte(this.isAnim ? (byte) 1 : (byte) 0);
         dest.writeInt(this.headerSize);
+        dest.writeInt(this.footerSize);
     }
 
     protected DiootoConfig(Parcel in) {
@@ -121,6 +132,7 @@ public class DiootoConfig implements Parcelable {
         this.immersive = in.readByte() != 0;
         this.isAnim = in.readByte() != 0;
         this.headerSize = in.readInt();
+        this.footerSize = in.readInt();
     }
 
     public static final Creator<DiootoConfig> CREATOR = new Creator<DiootoConfig>() {

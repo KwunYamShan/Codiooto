@@ -93,14 +93,22 @@ public class Diooto {
     }
 
     /**
-     * 点击的位置 如果你的RecyclerView有头部View  则使用 .position(holder.getAdapterPosition(),headSize) headSize为头部布局数量
+     * describe 点击的位置.
      */
     public Diooto position(int position) {
-        return position(position, 0);
+        return position(position, 0,0);
     }
 
-    public Diooto position(int position, int headerSize) {
+    /**
+     * describe 点击view的位置.
+     *
+     * @param position 当前点击view的位置
+     * @param headerSize 头布局的数量
+     * @param footerSize 脚布局的数量
+     */
+    public Diooto position(int position, int headerSize, int footerSize) {
         this.diootoConfig.setHeaderSize(headerSize);
+        this.diootoConfig.setFooterSize(footerSize);
         this.diootoConfig.setPosition(position - headerSize);
         return this;
     }
@@ -112,11 +120,7 @@ public class Diooto {
     }
 
     /**
-     * 可以传recylcerview自动识别(需要传在item布局中的viewId)  也可以手动传view数组
-     *
-     * @param recyclerView
-     * @param viewId
-     * @return
+     * describe 可以传recylcerview自动识别(需要传在item布局中的viewId)  也可以手动传view数组.
      */
     public Diooto views(RecyclerView recyclerView, @IdRes int viewId) {
         List<View> originImageList = new ArrayList<>();
@@ -130,7 +134,7 @@ public class Diooto {
         }
         RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
         int firstPos = 0, lastPos = 0;
-        int totalCount = layoutManager.getItemCount() - diootoConfig.getHeaderSize();
+        int totalCount = layoutManager.getItemCount() ;
         if (layoutManager instanceof GridLayoutManager) {
             GridLayoutManager gridLayMan = (GridLayoutManager) layoutManager;
             firstPos = gridLayMan.findFirstVisibleItemPosition();
@@ -149,11 +153,7 @@ public class Diooto {
     }
 
     /**
-     * 供viewpager使用
-     *
-     * @param totalCount
-     * @param view
-     * @return
+     * describe 每次回缩放到该view的位置上，注意totalCount需要和图片地址的数量一致.
      */
     public Diooto views(int totalCount, View view) {
         View[] views = new View[totalCount];
@@ -166,12 +166,16 @@ public class Diooto {
     private void fillPlaceHolder(List<View> originImageList, int totalCount, int firstPos, int lastPos) {
         if (firstPos > 0) {
             for (int pos = firstPos; pos > 0; pos--) {
+              if (diootoConfig.getHeaderSize()<pos) {
                 originImageList.add(0, null);
+              }
             }
         }
         if (lastPos < totalCount) {
             for (int i = (totalCount - 1 - lastPos); i > 0; i--) {
+              if ( i > diootoConfig.getFooterSize()) {
                 originImageList.add(null);
+              }
             }
         }
     }
