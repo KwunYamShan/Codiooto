@@ -740,6 +740,33 @@ public class DragDiootoView extends FrameLayout {
         }
         contentLayout.addView(view);
     }
+    /**
+     * describe 添加子view
+     *
+     * @param readMode 是否开启阅读模式，开启后尺寸类似长微博或清明上河图的图片将默认充满屏幕显示.
+     */
+    public void addContentChildView(View view,boolean readMode) {
+        ViewGroup parentViewGroup = (ViewGroup) view.getParent();
+        if (parentViewGroup != null) {
+            parentViewGroup.removeView(view);
+        }
+        if (view instanceof SketchImageView) {
+            SketchImageView sketchImageView = (SketchImageView) view;
+            if (sketchImageView.getZoomer() != null) {
+                sketchImageView.getZoomer().setReadMode(readMode);
+                sketchImageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        backToMin();
+                    }
+                });
+            }
+            if (readMode) {
+                sketchImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            }
+        }
+        contentLayout.addView(view);
+    }
 
     private void changeContentViewToFullscreen() {
         targetImageHeight = screenHeight;

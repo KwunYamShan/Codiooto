@@ -95,7 +95,7 @@ public class ImageFragment extends Fragment {
             sketchImageView = new SketchImageView(getContext());
             sketchImageView.getOptions().setDecodeGifImage(true);
             sketchImageView.setZoomEnabled(true);
-            dragDiootoView.addContentChildView(sketchImageView);
+            dragDiootoView.addContentChildView(sketchImageView,false);
             sketchImageView.getZoomer().getBlockDisplayer().setPause(!isVisibleToUser());
         }
         return view;
