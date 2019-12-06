@@ -240,10 +240,14 @@ public class DragDiootoView extends FrameLayout {
                     releaseY = releaseY + (releaseHeight - tempHeight) / 2;
                     releaseHeight = tempHeight;
                 }
-                changeImageViewToCenterCrop();
+                if (isAnim) {
+                    changeImageViewToCenterCrop();
+                }
             }
         }
-        changeImageViewToCenterCrop();
+        if (isAnim) {
+            changeImageViewToCenterCrop();
+        }
 
         ValueAnimator valueAnimator;
         if (isAnim) {
