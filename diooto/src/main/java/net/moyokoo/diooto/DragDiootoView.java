@@ -765,9 +765,7 @@ public class DragDiootoView extends FrameLayout {
                     }
                 });
             }
-            if (readMode) {
                 sketchImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            }
         }
         contentLayout.addView(view);
     }
