@@ -70,7 +70,10 @@ public class Diooto {
         this.diootoConfig.setType(type);
         return this;
     }
-
+    public Diooto videoUrl(String videoUrl) {
+        this.diootoConfig.setVideoUrl(videoUrl);
+        return this;
+    }
     /**
      * 当前的Activity是否为沉浸式,默认为false
      *

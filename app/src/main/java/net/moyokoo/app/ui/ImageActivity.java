@@ -61,6 +61,7 @@ public class ImageActivity extends AppCompatActivity {
         iProgress = new DefaultPercentProgress();
         iIndicator = new CircleIndexIndicator();
         diootoConfig = Diooto.getDiootoExtra(getIntent());
+        String videoUrl = diootoConfig.getVideoUrl();
         indicatorLayout.setVisibility(View.VISIBLE);
         mImageUrls = diootoConfig.getImageUrls();
         updateTitle();
@@ -71,8 +72,9 @@ public class ImageActivity extends AppCompatActivity {
         for (int i = 0; i < contentViewOriginModels.size(); i++) {
             ImageFragment imageFragment = ImageFragment.newInstance(
                     mImageUrls[i], i, diootoConfig.getType(),
-                    contentViewOriginModels.size() == 1 || diootoConfig.getPosition() == i, contentViewOriginModels.get(i), amin
+                    contentViewOriginModels.size() == 1 || diootoConfig.getPosition() == i, contentViewOriginModels.get(i), amin, videoUrl
             );
+            videoUrl = null;
             fragmentList.add(imageFragment);
             imageFragment.setOnBackListener(new ImageFragment.OnBackListener() {
                 @Override
@@ -126,6 +128,7 @@ public class ImageActivity extends AppCompatActivity {
             iIndicator.attach(indicatorLayout);
             iIndicator.onShow(mViewPager);
         }
+        mViewPager.setOffscreenPageLimit(Integer.MAX_VALUE);
     }
 
     //用来判断第一次点击的时候是否需要动画  第一次需要动画  后续viewpager滑动回到该页面的时候  不做动画

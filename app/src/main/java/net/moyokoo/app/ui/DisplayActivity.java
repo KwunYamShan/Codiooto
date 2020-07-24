@@ -175,6 +175,7 @@ public class DisplayActivity extends AppCompatActivity {
                     Diooto diooto = new Diooto(context)
                             .urls(activityPosition == 2 ? longImageUrl : normalImageUlr)
                             .type(DiootoConfig.PHOTO)
+                            .videoUrl("https://vdse.bdstatic.com//28df11aa5252020ace6fa4321f5a50e3.mp4?authorization=bce-auth-v1/fb297a5cc0fb434c971b8fa103e8dd7b/2017-05-11T09:02:31Z/-1//b3d16a3d534465108ca76bf89d90f86e5b1be6543119a9d864b6d3c315251725")
                             .immersive(isImmersive)
                             .isAnim(true)
                             .position(holder.getAdapterPosition(),1,1)

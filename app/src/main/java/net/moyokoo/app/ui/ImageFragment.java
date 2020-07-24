@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import net.moyokoo.app.R;
+import net.moyokoo.app.widget.SimpleControlPanel;
 import net.moyokoo.diooto.Diooto;
 import net.moyokoo.diooto.DragDiootoView;
 import net.moyokoo.diooto.config.DiootoConfig;
@@ -31,11 +33,15 @@ import me.panpf.sketch.request.LoadListener;
 import me.panpf.sketch.request.LoadRequest;
 import me.panpf.sketch.request.LoadResult;
 import me.panpf.sketch.util.SketchUtils;
+import org.salient.artplayer.MediaPlayerManager;
+import org.salient.artplayer.ScaleType;
+import org.salient.artplayer.VideoView;
 
 public class ImageFragment extends Fragment {
     DragDiootoView         dragDiootoView;
     ContentViewOriginModel contentViewOriginModel;
     String                 url;
+    String                 videoUrl;
     SketchImageView        sketchImageView;
     int                    position;
     int                    type                = DiootoConfig.PHOTO;
@@ -48,9 +54,10 @@ public class ImageFragment extends Fragment {
         return dragDiootoView;
     }
 
-    public static ImageFragment newInstance(String url, int position, int type, boolean shouldShowAnimation, ContentViewOriginModel contentViewOriginModel, boolean isAmin) {
+    public static ImageFragment newInstance(String url, int position, int type, boolean shouldShowAnimation, ContentViewOriginModel contentViewOriginModel, boolean isAmin,String videoUrl) {
         Bundle args = new Bundle();
         args.putString("url", url);
+        args.putString("videoUrl", videoUrl);
         args.putInt("position", position);
         args.putBoolean("shouldShowAnimation", shouldShowAnimation);
         args.putInt("type", type);
@@ -67,6 +74,7 @@ public class ImageFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_image, container, false);
         if (getArguments() != null) {
             url = getArguments().getString("url");
+            videoUrl = getArguments().getString("videoUrl");
             position = getArguments().getInt("position");
             shouldShowAnimation = getArguments().getBoolean("shouldShowAnimation");
             type = getArguments().getInt("type");
@@ -81,15 +89,13 @@ public class ImageFragment extends Fragment {
             ImageActivity.iProgress.attach(position, loadingLayout);
         }
         loadingLayout.setVisibility(View.GONE);
-        if (type == DiootoConfig.VIDEO) {
-            if (Diooto.onProvideViewListener == null) {
-                throw new RuntimeException("you should set onProvideViewListener first if you use VIDEO");
-            }
+        if (!TextUtils.isEmpty(videoUrl)) {
+
             if (dragDiootoView.getContentParentView().getChildCount() <= 0) {
-                dragDiootoView.addContentChildView(Diooto.onProvideViewListener.provideView());
+                dragDiootoView.addContentChildView(new VideoView(getContext()));
                 SketchImageView photoView = new SketchImageView(getContext());
                 dragDiootoView.addContentChildView(photoView);
-                Diooto.onProvideViewListener = null;
+                //Diooto.onProvideViewListener = null;
             }
         } else {
             sketchImageView = new SketchImageView(getContext());
@@ -107,27 +113,42 @@ public class ImageFragment extends Fragment {
         if (getContext() == null || getActivity() == null) {
             return;
         }
-        if (Diooto.onLoadPhotoBeforeShowBigImageListener != null) {
+        if (!TextUtils.isEmpty(videoUrl)) {
             if (dragDiootoView.getContentView() instanceof SketchImageView) {
-                Diooto.onLoadPhotoBeforeShowBigImageListener.loadView((SketchImageView) dragDiootoView.getContentView(), position);
-            } else if (dragDiootoView.getContentParentView().getChildAt(1) instanceof SketchImageView) {
-                Diooto.onLoadPhotoBeforeShowBigImageListener.loadView((SketchImageView) dragDiootoView.getContentParentView().getChildAt(1), 0);
+                //Diooto.onLoadPhotoBeforeShowBigImageListener.loadView((SketchImageView) dragDiootoView.getContentView(), position);
+                ((SketchImageView) dragDiootoView.getContentView()).displayImage(url);
+            } else if (dragDiootoView.getContentParentView()
+                .getChildAt(1) instanceof SketchImageView) {
+                //Diooto.onLoadPhotoBeforeShowBigImageListener.loadView((SketchImageView) dragDiootoView.getContentParentView().getChildAt(1), 0);
+                ((SketchImageView) dragDiootoView.getContentParentView().getChildAt(1))
+                    .displayImage(url);
                 dragDiootoView.getContentParentView().getChildAt(1).setVisibility(View.VISIBLE);
             }
         }
         dragDiootoView.setOnShowFinishListener(new DragDiootoView.OnShowFinishListener() {
             @Override
             public void showFinish(DragDiootoView view, boolean showImmediately) {
-                if (type == DiootoConfig.VIDEO) {
+                if (!TextUtils.isEmpty(videoUrl)) {
                     loadingLayout.setVisibility(View.VISIBLE);
                     if (ImageActivity.iProgress != null) {
                         ImageActivity.iProgress.onStart(position);
                     }
-                    if (Diooto.onShowToMaxFinishListener != null) {
-                        Diooto.onShowToMaxFinishListener.onShowToMax(dragDiootoView,
-                                (SketchImageView) dragDiootoView.getContentParentView().getChildAt(1),
-                                ImageActivity.iProgress.getProgressView(position));
-                    }
+                        VideoView videoView = (VideoView) dragDiootoView.getContentView();
+                        SimpleControlPanel simpleControlPanel = new SimpleControlPanel(getContext());
+                        simpleControlPanel.setOnClickListener(v -> dragDiootoView.backToMin());
+                        simpleControlPanel.setOnVideoPreparedListener(() -> {
+                            ((SketchImageView) dragDiootoView.getContentParentView().getChildAt(1)).setVisibility(View.GONE);
+                            ImageActivity.iProgress.getProgressView(position).setVisibility(View.GONE);
+                        });
+                        videoView.setControlPanel(simpleControlPanel);
+                        //videoView.setUp("http://bmob-cdn-982.b0.upaiyun.com/2017/02/23/266454624066f2b680707492a0664a97.mp4");
+                        videoView.setUp("https://vdse.bdstatic.com//28df11aa5252020ace6fa4321f5a50e3.mp4?authorization=bce-auth-v1/fb297a5cc0fb434c971b8fa103e8dd7b/2017-05-11T09:02:31Z/-1//b3d16a3d534465108ca76bf89d90f86e5b1be6543119a9d864b6d3c315251725");
+                        if (getUserVisibleHint()) {
+                            videoView.start();
+                        }
+                        //dragDiootoView.notifySize(1920, 1080);
+                        MediaPlayerManager.instance().setScreenScale(ScaleType.SCALE_CENTER_CROP);
+
                 } else if (type == DiootoConfig.PHOTO && view.getContentView() instanceof SketchImageView && !hasCache) {
                     loadImage();
                 }
