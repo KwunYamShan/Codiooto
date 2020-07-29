@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.llj.lib.statusbar.StatusBarCompat;
 import net.moyokoo.app.R;
 import net.moyokoo.app.interfaces.CircleIndexIndicator;
 import net.moyokoo.app.interfaces.DefaultPercentProgress;
@@ -44,7 +45,9 @@ public class ImageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //兼容全面屏
+        StatusBarCompat.setStatusBarColor(getWindow(), getResources().getColor(R.color.cl_000000));
+        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_image);
         initView();
         initData();

@@ -6,4 +6,5 @@
     <color name="transparent">#00000000</color>
     <color name="cl_00000000">#00000000</color>
     <color name="cl_66000000">#66000000</color>
+    <color name="cl_000000">#000000</color>
 </resources>

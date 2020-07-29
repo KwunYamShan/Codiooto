@@ -18,9 +18,9 @@ public class Fucking {
     public static int getFuckHeight(Window window) {
 
         Context context = window.getContext();
-        if (hasNotchAtHuawei(context) || hasNotchAtVoio(window.getContext()) || hasNotchInScreenAtOPPO(context)) {
-            return getStatusBarHeight(window.getContext());
-        }
+        //if (hasNotchAtHuawei(context) || hasNotchAtVoio(window.getContext()) || hasNotchInScreenAtOPPO(context)) {
+        //    return getStatusBarHeight(window.getContext());
+        //}
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             final View decorView = window.getDecorView();
             DisplayCutout displayCutout = decorView.getRootWindowInsets().getDisplayCutout();
@@ -30,15 +30,25 @@ public class Fucking {
                 return 0;
             }
         } else {
-            return 0;
+            return getStatusBarHeight(context);
         }
     }
 
+    //public static int getStatusBarHeight(Context context) {
+    //    // 获得状态栏高度
+    //    int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+    //    return context.getResources().getDimensionPixelSize(resourceId);
+    //}
+
     public static int getStatusBarHeight(Context context) {
-        // 获得状态栏高度
+        int result = 0;
         int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
-        return context.getResources().getDimensionPixelSize(resourceId);
+        if (resourceId > 0) {
+            result = context.getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
     }
+
 
     public static boolean hasNotchAtHuawei(Context context) {
         boolean ret = false;
