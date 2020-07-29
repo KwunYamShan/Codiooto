@@ -174,18 +174,10 @@ public class DisplayActivity extends AppCompatActivity {
                 } else {
                     Diooto diooto = new Diooto(context)
                             .urls(activityPosition == 2 ? longImageUrl : normalImageUlr)
-                            .type(DiootoConfig.PHOTO)
-                            .immersive(isImmersive)
                             .isAnim(true)
+                            .videoUrl("https://vdse.bdstatic.com//28df11aa5252020ace6fa4321f5a50e3.mp4?authorization=bce-auth-v1/fb297a5cc0fb434c971b8fa103e8dd7b/2017-05-11T09:02:31Z/-1//b3d16a3d534465108ca76bf89d90f86e5b1be6543119a9d864b6d3c315251725")
                             .position(holder.getAdapterPosition(),1,1)
                             .views(mRecyclerView, R.id.srcImageView)
-                            .loadPhotoBeforeShowBigImage((sketchImageView, position12) -> {
-                                sketchImageView.displayImage(activityPosition == 2 ? longImageUrl[position] : normalImageUlr[position]);
-                                sketchImageView.setOnLongClickListener(v -> {
-                                    Toast.makeText(DisplayActivity.this, "Long click", Toast.LENGTH_SHORT).show();
-                                    return false;
-                                });
-                            })
                             .start(ImageActivity.class);
 
                 }

@@ -41,6 +41,7 @@ public class ImageActivity extends AppCompatActivity {
     private RelativeLayout mRlTopBar;
     private TextView       mTvTitle;
     private String[]       mImageUrls;
+    private String         mVideoUrl;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,6 +67,7 @@ public class ImageActivity extends AppCompatActivity {
         diootoConfig = Diooto.getDiootoExtra(getIntent());
         indicatorLayout.setVisibility(View.VISIBLE);
         mImageUrls = diootoConfig.getImageUrls();
+        mVideoUrl = diootoConfig.getVideoUrl();
         updateTitle();
         currentItem = diootoConfig.getPosition();
         contentViewOriginModels = diootoConfig.getContentViewOriginModels();
@@ -75,7 +77,7 @@ public class ImageActivity extends AppCompatActivity {
             ImageFragment imageFragment = ImageFragment.newInstance(
                     mImageUrls[i], i, diootoConfig.getType(),
                     contentViewOriginModels.size() == 1 || diootoConfig.getPosition() == i, contentViewOriginModels.get(i), amin
-            );
+            ,mVideoUrl);
             fragmentList.add(imageFragment);
             imageFragment.setOnBackListener(new ImageFragment.OnBackListener() {
                 @Override

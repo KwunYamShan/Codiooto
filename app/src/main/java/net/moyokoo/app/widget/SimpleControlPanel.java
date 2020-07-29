@@ -19,6 +19,7 @@ public class SimpleControlPanel extends AbsControlPanel implements SeekBar.OnSee
 
     private ProgressBar loading;
     private ImageView video_cover;
+    private ImageView iv_play;
     public interface OnVideoPreparedListener{
         void prepared();
     }
@@ -27,6 +28,25 @@ public class SimpleControlPanel extends AbsControlPanel implements SeekBar.OnSee
     public void setOnVideoPreparedListener(OnVideoPreparedListener onVideoPreparedListener) {
         this.onVideoPreparedListener = onVideoPreparedListener;
     }
+
+    public interface OnVideoPlayingListener{
+        void playing();
+    }
+    OnVideoPlayingListener onVideoPlayingListener;
+
+    public void setOnVideoPlayingListener(OnVideoPlayingListener onVideoPlayingListener) {
+        this.onVideoPlayingListener = onVideoPlayingListener;
+    }
+
+    public interface OnPlayVideoClickListener{
+        void onPlayClick();
+    }
+    OnPlayVideoClickListener onPlayVideoClickListener;
+
+    public void setOnPlayVideoClickListener(OnPlayVideoClickListener onPlayVideoClickListener) {
+        this.onPlayVideoClickListener = onPlayVideoClickListener;
+    }
+
 
     public SimpleControlPanel(Context context) {
         super(context);
@@ -52,6 +72,15 @@ public class SimpleControlPanel extends AbsControlPanel implements SeekBar.OnSee
         super.init(context);
         loading = findViewById(R.id.loading);
         video_cover = findViewById(R.id.video_cover);
+        iv_play = findViewById(R.id.iv_play);
+        iv_play.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onPlayVideoClickListener!=null){
+                    onPlayVideoClickListener.onPlayClick();
+                }
+            }
+        });
     }
 
 
@@ -82,6 +111,9 @@ public class SimpleControlPanel extends AbsControlPanel implements SeekBar.OnSee
 
     @Override
     public void onStatePlaying() {
+        if (onVideoPlayingListener!=null){
+            onVideoPlayingListener.playing();
+        }
     }
 
     @Override
@@ -90,11 +122,13 @@ public class SimpleControlPanel extends AbsControlPanel implements SeekBar.OnSee
 
     @Override
     public void onStatePlaybackCompleted() {
+        showUI(iv_play);
+
     }
 
     @Override
     public void onSeekComplete() {
-
+        hideUI(iv_play);
     }
 
     @Override
@@ -107,7 +141,6 @@ public class SimpleControlPanel extends AbsControlPanel implements SeekBar.OnSee
 
     @Override
     public void onProgressUpdate(final int progress, final long position, final long duration) {
-
     }
 
     @Override
@@ -137,7 +170,7 @@ public class SimpleControlPanel extends AbsControlPanel implements SeekBar.OnSee
             vpup = vpup.getParent();
         }
         if (MediaPlayerManager.instance().getPlayerState() != MediaPlayerManager.PlayerState.PLAYING &&
-                MediaPlayerManager.instance().getPlayerState() != MediaPlayerManager.PlayerState.PAUSED)
+            MediaPlayerManager.instance().getPlayerState() != MediaPlayerManager.PlayerState.PAUSED)
             return;
         long time = (long) (seekBar.getProgress() * 1.00 / 100 * MediaPlayerManager.instance().getDuration());
         MediaPlayerManager.instance().seekTo(time);

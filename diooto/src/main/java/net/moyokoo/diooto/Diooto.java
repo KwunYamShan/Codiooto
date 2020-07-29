@@ -71,12 +71,18 @@ public class Diooto {
         return this;
     }
 
+    public Diooto videoUrl(String videoUrl){
+        this.diootoConfig.setVideoUrl(videoUrl);
+        return  this;
+    }
+
     /**
-     * 当前的Activity是否为沉浸式,默认为false
+     * 当前的Activity是否为沉浸式,默认为true
      *
      * @param immersive
      * @return
      */
+    @Deprecated
     public Diooto immersive(boolean immersive) {
         this.diootoConfig.setImmersive(immersive);
         return this;
