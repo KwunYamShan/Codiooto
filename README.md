@@ -42,10 +42,7 @@ allprojects {
 #### 图片模式
 ```Java
                     Diooto diooto = new Diooto(context)
-                            .urls(activityPosition == 2 ? longImageUrl : normalImageUlr)
-                            //图片或者视频
-                            .type(DiootoConfig.PHOTO)
-                            .immersive(isImmersive)
+                            .urls(picUrlList)
                             //是否需要加退出动画
                             .isAnim(true)
                             //点击的位置 如果你的RecyclerView有头部View  则使用 .position(holder.getAdapterPosition(),headSize) headSize为头部布局数量
@@ -62,36 +59,26 @@ allprojects {
                             })
                             .start(ImageActivity.class);
 ```
-#### 视频模式
+#### 加载视频
 ```Java
  //加载视频
                     Diooto diooto = new Diooto(context)
-                            .urls(normalImageUlr[position])
+                            .urls(picUrl)
                             .position(holder.getAdapterPosition())
                             .views(holder.srcImageView)
-                            .type(DiootoConfig.VIDEO)
-                            .immersive(isImmersive)
-                            //提供视频View
-                            .onProvideVideoView(() -> new VideoView(context))
-                            //显示视频加载之前的缩略图
-                            .loadPhotoBeforeShowBigImage((sketchImageView, position13) -> sketchImageView.displayImage(normalImageUlr[position]))
-                            //动画到最大化时的接口
-                            .onVideoLoadEnd((dragDiootoView, sketchImageView, progressView) -> {
-                                VideoView videoView = (VideoView) dragDiootoView.getContentView();
-                                SimpleControlPanel simpleControlPanel = new SimpleControlPanel(context);
-                                simpleControlPanel.setOnClickListener(v -> dragDiootoView.backToMin());
-                                simpleControlPanel.setOnVideoPreparedListener(() -> {
-                                    sketchImageView.setVisibility(View.GONE);
-                                    progressView.setVisibility(View.GONE);
-                                });
-                                videoView.setControlPanel(simpleControlPanel);
-                                videoView.setUp("https://vdse.bdstatic.com//28df11aa5252020ace6fa4321f5a50e3.mp4?authorization=bce-auth-v1/fb297a5cc0fb434c971b8fa103e8dd7b/2017-05-11T09:02:31Z/-1//b3d16a3d534465108ca76bf89d90f86e5b1be6543119a9d864b6d3c315251725");
-                                videoView.start();
-                                dragDiootoView.notifySize(1920, 1080);
-                                MediaPlayerManager.instance().setScreenScale(ScaleType.SCALE_CENTER_CROP);
-                            })
-                            //到最小状态的接口
-                            .onFinish(dragDiootoView -> MediaPlayerManager.instance().releasePlayerAndView(context))
+                            .videoUrl("videoUrl")
+                            .views(mRecyclerView, R.id.srcImageView)
+                            .start(ImageActivity.class);
+```
+#### 视图混合
+```Java
+ //支持视频和图片混合
+                    Diooto diooto = new Diooto(context)
+                            .urls(picUrlList)
+                            .isAnim(true)
+                            .position(holder.getAdapterPosition())
+                            .views(holder.srcImageView)
+                            .videoUrl("videoUrl")
                             .start(ImageActivity.class);
 ```
 ### 在此感谢

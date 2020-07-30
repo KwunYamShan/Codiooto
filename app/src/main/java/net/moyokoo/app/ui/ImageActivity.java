@@ -40,7 +40,7 @@ public class ImageActivity extends AppCompatActivity {
 
     private RelativeLayout mRlTopBar;
     private TextView       mTvTitle;
-    private String[]       mImageUrls;
+    private List<String>       mImageUrls;
     private String         mVideoUrl;
 
     @Override
@@ -75,7 +75,7 @@ public class ImageActivity extends AppCompatActivity {
         fragmentList = new ArrayList<>();
         for (int i = 0; i < contentViewOriginModels.size(); i++) {
             ImageFragment imageFragment = ImageFragment.newInstance(
-                    mImageUrls[i], i, diootoConfig.getType(),
+                    mImageUrls.get(i), i, diootoConfig.getType(),
                     contentViewOriginModels.size() == 1 || diootoConfig.getPosition() == i, contentViewOriginModels.get(i), amin
             ,mVideoUrl);
             fragmentList.add(imageFragment);
@@ -143,13 +143,7 @@ public class ImageActivity extends AppCompatActivity {
     }
 
     public void finishView() {
-        if (Diooto.onFinishListener != null) {
-            Diooto.onFinishListener.finish(fragmentList.get(mViewPager.getCurrentItem()).getDragDiootoView());
-        }
         Diooto.onLoadPhotoBeforeShowBigImageListener = null;
-        Diooto.onShowToMaxFinishListener = null;
-        Diooto.onProvideViewListener = null;
-        Diooto.onFinishListener = null;
         iIndicator = null;
         iProgress = null;
         finish();
@@ -166,7 +160,7 @@ public class ImageActivity extends AppCompatActivity {
     }
 
     private void updateTitle() {
-        mTvTitle.setText(getString(R.string.title, currentItem + 1, mImageUrls==null?0:mImageUrls.length));
+        mTvTitle.setText(getString(R.string.title, currentItem + 1, mImageUrls==null?0:mImageUrls.size()));
     }
 
     public void hiddenView(boolean hidden) {

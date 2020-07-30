@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
-import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +14,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 
 import net.moyokoo.diooto.config.ContentViewOriginModel;
 import net.moyokoo.diooto.config.DiootoConfig;
@@ -47,21 +45,18 @@ public class Diooto {
     }
 
     public Diooto urls(String imageUrl) {
-        this.diootoConfig.setImageUrls(new String[]{imageUrl});
+        List<String> list = new ArrayList<>();
+        list.add(imageUrl);
+        this.diootoConfig.setImageUrls(list);
         return this;
     }
 
-    public Diooto fullscreen(boolean isFullScreen) {
-        this.diootoConfig.setFullScreen(isFullScreen);
-        return this;
-    }
-
-    public Diooto urls(String[] imageUrls) {
+    public Diooto urls(List<String> imageUrls) {
         this.diootoConfig.setImageUrls(imageUrls);
         return this;
     }
 
-    public Diooto originalUrls(String[] originalUrls) {
+    public Diooto originalUrls(List<String> originalUrls) {
         this.diootoConfig.setOriginalUrls(originalUrls);
         return this;
     }
@@ -71,21 +66,14 @@ public class Diooto {
         return this;
     }
 
+    /**
+     * describe 设置视频的url.
+     *
+     * @author WuHao
+     */
     public Diooto videoUrl(String videoUrl){
         this.diootoConfig.setVideoUrl(videoUrl);
         return  this;
-    }
-
-    /**
-     * 当前的Activity是否为沉浸式,默认为true
-     *
-     * @param immersive
-     * @return
-     */
-    @Deprecated
-    public Diooto immersive(boolean immersive) {
-        this.diootoConfig.setImmersive(immersive);
-        return this;
     }
 
     /**
@@ -120,9 +108,20 @@ public class Diooto {
     }
 
     public Diooto views(View view) {
-        View[] views = new View[1];
-        views[0] = view;
-        return views(views);
+        return views(view,1);
+    }
+
+    /**
+     * describe 同一个位置绑定多张图片.
+     *
+     * @author WuHao
+     */
+    public Diooto urlsBindView(List<String> urls, View view) {
+        this.diootoConfig.setImageUrls(urls);
+        if (urls!=null && urls.size()>0){
+            views(view,urls.size());
+        }
+        return this;
     }
 
     /**
@@ -188,11 +187,15 @@ public class Diooto {
 
     public Diooto views(View[] views) {
         List<ContentViewOriginModel> list = new ArrayList<>();
+        int screenWidth = mContext.getResources().getDisplayMetrics().widthPixels;
+        int screenHeight = mContext.getResources().getDisplayMetrics().heightPixels;
+        int screenWidthCenter = screenWidth/2;
+        int screenHeightCenter = screenHeight/2;
         for (View imageView : views) {
             ContentViewOriginModel imageBean = new ContentViewOriginModel();
             if (imageView == null) {
-                imageBean.left = 0;
-                imageBean.top = 0;
+                imageBean.left = screenWidthCenter;
+                imageBean.top = screenHeightCenter;
                 imageBean.width = 0;
                 imageBean.height = 0;
             } else {
@@ -209,13 +212,40 @@ public class Diooto {
         return this;
     }
 
+
+    public Diooto views(View view, int count) {
+        List<ContentViewOriginModel> list = new ArrayList<>();
+        int screenWidth = mContext.getResources().getDisplayMetrics().widthPixels;
+        int screenHeight = mContext.getResources().getDisplayMetrics().heightPixels;
+        int screenWidthCenter = screenWidth/2;
+        int screenHeightCenter = screenHeight/2;
+        for (int i = 0 ;i<count ;i++) {
+            ContentViewOriginModel imageBean = new ContentViewOriginModel();
+            if (view == null) {
+                imageBean.left = screenWidthCenter;
+                imageBean.top = screenHeightCenter;
+                imageBean.width = 0;
+                imageBean.height = 0;
+            } else {
+                int location[] = new int[2];
+                view.getLocationOnScreen(location);
+                imageBean.left = location[0];
+                imageBean.top = location[1] - Fucking.getFuckHeight(getWindow(view.getContext()));
+                imageBean.width = view.getWidth();
+                imageBean.height = view.getHeight();
+            }
+            list.add(imageBean);
+        }
+        diootoConfig.setContentViewOriginModels(list);
+        return this;
+    }
+
     /**
      * 给传入的class绑定数据并自动打开对应的activity
      *
      * @return
      */
     public Diooto start(Class clazz) {
-        setWindow();
         startImageActivity(clazz);
         return this;
     }
@@ -226,7 +256,7 @@ public class Diooto {
      * @return
      */
     public Diooto start() {
-        return setWindow();
+        return this;
     }
 
     public DiootoConfig getConfig() {
@@ -273,66 +303,15 @@ public class Diooto {
         return null;
     }
 
-    public Diooto setWindow() {
-        if (!diootoConfig.isImmersive()) {
-            Window window = getWindow(mContext);
-            if ((window.getAttributes().flags & WindowManager.LayoutParams.FLAG_FULLSCREEN)
-                    == WindowManager.LayoutParams.FLAG_FULLSCREEN) {
-                diootoConfig.setFullScreen(true);
-            }
-            if (!diootoConfig.isFullScreen()) {
-                window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                    window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-                    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                }
-            }
-        }
-        return this;
-    }
-
     public Diooto loadPhotoBeforeShowBigImage(OnLoadPhotoBeforeShowBigImageListener on) {
         onLoadPhotoBeforeShowBigImageListener = on;
         return this;
     }
 
-    public Diooto onVideoLoadEnd(OnShowToMaxFinishListener on) {
-        onShowToMaxFinishListener = on;
-        return this;
-    }
-
-    public Diooto onFinish(OnFinishListener on) {
-        onFinishListener = on;
-        return this;
-    }
-
-    public Diooto onProvideVideoView(OnProvideViewListener on) {
-        onProvideViewListener = on;
-        return this;
-    }
-
     public static OnLoadPhotoBeforeShowBigImageListener onLoadPhotoBeforeShowBigImageListener;
-    public static OnShowToMaxFinishListener             onShowToMaxFinishListener;
-    public static OnProvideViewListener                 onProvideViewListener;
-    public static OnFinishListener                      onFinishListener;
 
     public interface OnLoadPhotoBeforeShowBigImageListener {
         void loadView(SketchImageView sketchImageView, int position);
-    }
-
-    public interface OnProvideViewListener {
-        View provideView();
-    }
-
-    public interface OnShowToMaxFinishListener {
-        void onShowToMax(DragDiootoView dragDiootoView, SketchImageView sketchImageView, View progressView);
-    }
-
-    public interface OnFinishListener {
-        void finish(DragDiootoView dragDiootoView);
     }
 
     public static void cleanMemory(@NonNull Context context) {

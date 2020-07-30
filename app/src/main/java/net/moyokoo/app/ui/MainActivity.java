@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             "加载列表",
             "加载单张",
             "加载长图",
-            "加载视频"
+            "视图混合"
     };
 
     @Override

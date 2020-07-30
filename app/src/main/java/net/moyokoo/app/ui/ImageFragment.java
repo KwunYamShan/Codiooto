@@ -213,9 +213,6 @@ public class ImageFragment extends Fragment {
                 if (getContext() instanceof ImageActivity) {
                     ((ImageActivity) getContext()).finishView();
                 }
-                if (Diooto.onFinishListener != null) {
-                    Diooto.onFinishListener.finish(dragDiootoView);
-                }
             }
         });
         dragDiootoView.setOnReleaseListener(new DragDiootoView.OnReleaseListener() {
