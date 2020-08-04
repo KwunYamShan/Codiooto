@@ -119,7 +119,7 @@ public class Diooto {
     public Diooto urlsBindView(List<String> urls, View view) {
         this.diootoConfig.setImageUrls(urls);
         if (urls!=null && urls.size()>0){
-            views(view,urls.size());
+            return views(view,urls.size());
         }
         return this;
     }

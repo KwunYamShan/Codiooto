@@ -46,15 +46,23 @@ public class DisplayActivity extends AppCompatActivity {
       "https://wx4.sinaimg.cn/large/0075aoetgy1fwkmjmcl67j30b3cmchdw.jpg"
   };
   String[]         normalImageUlr = new String[]{
+      "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2556516854,156454147&fm=26&gp=0.jpg",
       "http://img1.juimg.com/140908/330608-140ZP1531651.jpg",
       "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4252693316,3220141270&fm=26&gp=0.jpg",
-      "123",
+      "https://img.hbhcdn.com/zhuanti/20890/zhanwei.jpg",
       "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2968785817,771434359&fm=26&gp=0.jpg",
       "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1481652703,2245130276&fm=26&gp=0.jpg",
       "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596083241906&di=ecafe0055d058a8df6141f628b85d00d&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%3D580%2Fsign%3D2f1242b2a344ad342ebf878fe0a30c08%2Fdec7157adab44aed90425ebbb11c8701a08bfb45.jpg",
-      "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2556516854,156454147&fm=26&gp=0.jpg",
+
       "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3819244488,33241013&fm=26&gp=0.jpg",
       "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2801246744,2616381601&fm=26&gp=0.jpg",
+  };
+
+  String [] videoUrl = new String[]{
+      "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+      "https://vdse.bdstatic.com//28df11aa5252020ace6fa4321f5a50e3.mp4?authorization=bce-auth-v1/fb297a5cc0fb434c971b8fa103e8dd7b/2017-05-11T09:02:31Z/-1//b3d16a3d534465108ca76bf89d90f86e5b1be6543119a9d864b6d3c315251725",
+      "https://v-cdn.zjol.com.cn/280443.mp4",
+      "https://vod.hbhcdn.com/dmp/test/b/lpmicrofilm/43742240577949696.mp4"
   };
   Context          context;
   int              activityPosition;

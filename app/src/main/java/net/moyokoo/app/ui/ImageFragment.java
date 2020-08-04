@@ -82,7 +82,7 @@ public class ImageFragment extends Fragment {
         }
         loadingLayout = view.findViewById(R.id.loadingLayout);
         dragDiootoView = view.findViewById(R.id.dragDiootoView);
-        dragDiootoView.setPhoto(type == DiootoConfig.PHOTO);
+        dragDiootoView.setPhoto(!isHaveVideo());
         dragDiootoView.setAnim(isAnim);
         if (ImageActivity.iProgress != null) {
             ImageActivity.iProgress.attach(position, loadingLayout);
@@ -91,12 +91,13 @@ public class ImageFragment extends Fragment {
         if (isHaveVideo()) {
             if (dragDiootoView.getContentParentView().getChildCount() <= 0) {
                 dragDiootoView.addContentChildView(new VideoView(getActivity()));
-                SketchImageView photoView = new SketchImageView(getContext());
-                photoView.getOptions().setDecodeGifImage(true)
+
+                sketchImageView = new SketchImageView(getContext());
+                sketchImageView.getOptions().setDecodeGifImage(true)
                     .setErrorImage(R.drawable.ic_error);
-                photoView.setZoomEnabled(true);
-                dragDiootoView.addContentChildView(photoView);
-                photoView.getZoomer().getBlockDisplayer().setPause(!isVisibleToUser());
+                sketchImageView.setZoomEnabled(true);
+                dragDiootoView.addContentChildView(sketchImageView);
+                sketchImageView.getZoomer().getBlockDisplayer().setPause(!isVisibleToUser());
             }
         } else {
             sketchImageView = new SketchImageView(getContext());
@@ -123,16 +124,17 @@ public class ImageFragment extends Fragment {
             }
         }else{
             if (dragDiootoView.getContentView() instanceof SketchImageView) {
-                ((SketchImageView) dragDiootoView.getContentView()).displayImage(url);
+                ((SketchImageView)dragDiootoView.getContentView()).displayImage(url);
             } else if (dragDiootoView.getContentParentView().getChildAt(1) instanceof SketchImageView) {
-                ((SketchImageView) dragDiootoView.getContentParentView().getChildAt(1)).displayImage(url);
-                dragDiootoView.getContentParentView().getChildAt(1).setVisibility(View.VISIBLE);
+                ((SketchImageView)dragDiootoView.getContentParentView().getChildAt(1)).displayImage(url);
+                ((SketchImageView)dragDiootoView.getContentParentView().getChildAt(1)).setVisibility(View.VISIBLE);
             }
         }
         dragDiootoView.setOnShowFinishListener(new DragDiootoView.OnShowFinishListener() {
             @Override
             public void showFinish(DragDiootoView view, boolean showImmediately) {
                 if (isHaveVideo()) {
+                    loadImage();
                     loadingLayout.setVisibility(View.VISIBLE);
                     if (ImageActivity.iProgress != null) {
                         ImageActivity.iProgress.onStart(position);
@@ -261,7 +263,7 @@ public class ImageFragment extends Fragment {
             @Override
             public void onCompleted(@NonNull Drawable drawable, @NonNull ImageFrom imageFrom, @NonNull ImageAttrs imageAttrs) {
                 loadingLayout.setVisibility(View.GONE);
-                if (ImageActivity.iProgress != null) {
+                if (ImageActivity.iProgress != null && !isHaveVideo()) {
                     ImageActivity.iProgress.onFinish(position);
                 }
                 int w = drawable.getIntrinsicWidth();
@@ -314,7 +316,7 @@ public class ImageFragment extends Fragment {
             @Override
             public void onCompleted(@NonNull LoadResult result) {
                 loadingLayout.setVisibility(View.GONE);
-                if (ImageActivity.iProgress != null) {
+                if (ImageActivity.iProgress != null && !isHaveVideo()) {
                     ImageActivity.iProgress.onFinish(position);
                 }
                 if (result.getGifDrawable() != null) {
