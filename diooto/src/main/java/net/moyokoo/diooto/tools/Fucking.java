@@ -1,18 +1,13 @@
 package net.moyokoo.diooto.tools;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Rect;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.DisplayCutout;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 
 import java.lang.reflect.Method;
-import java.util.List;
 
 public class Fucking {
     public static int getFuckHeight(Window window) {

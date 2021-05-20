@@ -2,13 +2,13 @@
 
 buildscript {
     repositories {
-        maven { url BINTRAY_URL }
         jcenter()
         google()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.2'
-        classpath 'com.novoda:bintray-release:0.9.1'
+        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -18,7 +18,7 @@ allprojects {
     repositories {
         jcenter()
         google()
-        maven { url BINTRAY_URL }
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -28,11 +28,11 @@ task clean(type: Delete) {
 
 ext {
     //Android
-    androidBuildToolsVersion = "27.0.3"
+    androidBuildToolsVersion = "28.0.3"
     androidMinSdkVersion = 19
     androidTargetSdkVersion = 28
     androidCompileSdkVersion = 28
-    supportLibraryVersion = '27.1.1'
+    supportLibraryVersion = '28.0.0'
 
     glide = '3.7.0'
 

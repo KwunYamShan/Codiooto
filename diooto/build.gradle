@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
-
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.KwunYamShan'
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
     compileSdkVersion globalConfiguration.androidCompileSdkVersion
@@ -31,15 +31,4 @@ dependencies {
     implementation androidDependencies.design
     implementation 'me.panpf:sketch:2.7.1-rc01'
     implementation 'me.panpf:sketch-gif:2.7.1-rc01'
-}
-
-publish {
-    artifactId = ARTIFACT_ID
-    userOrg = USER_ORG
-    groupId = GROUP_ID
-    uploadName = ARTIFACT_ID
-    publishVersion =  VERSION
-    desc = DESC
-    website = WEB_SITE
-    licences =  [APACHE_LICENCES]
 }

@@ -1,7 +1,8 @@
 package net.moyokoo.app.interfaces;
 
-import android.support.v4.view.ViewPager;
+
 import android.widget.FrameLayout;
+import androidx.viewpager.widget.ViewPager;
 
 public interface IIndicator {
 

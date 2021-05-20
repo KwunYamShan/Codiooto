@@ -44,5 +44,6 @@ dependencies {
     implementation 'com.gyf.immersionbar:immersionbar:2.3.3'
     implementation 'com.llj:lib-statusbar:0.0.1'
     api project(':diooto')
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
 //    api androidDependencies.codiooto
 }

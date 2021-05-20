@@ -3,11 +3,11 @@ package net.moyokoo.app.interfaces;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
-import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import androidx.viewpager.widget.ViewPager;
 import net.moyokoo.diooto.tools.Utils;
 
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
