@@ -40,7 +40,7 @@ ext {
             appcompat_v7 : 'androidx.appcompat:appcompat:1.0.0',
             design       : 'com.google.android.material:material:1.0.0',
             cardview     : 'androidx.cardview:cardview:1.0.0',
-            codiooto     : "com.wh.diooto:Codiooto:1.2.1",
+            codiooto     : "com.github.KwunYamShan:Codiooto:v1.2.1",
             glide        : 'com.github.bumptech.glide:glide:4.3.1',
     ]
 
